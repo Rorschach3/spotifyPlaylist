@@ -1,0 +1,68 @@
+html {
+  background-image: url("../../public/spotify-bg.jpg");
+}
+
+#root {
+  max-width: 1280px;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes background-image {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+h2, h1, li {
+  color: rgba(200, 255, 200, 1);
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  min-height: 80px;
+  font-size: 2.3rem;
+  box-shadow: rgb(245, 242, 242)
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 30%;
+  font-size: 1.3rem;
+}
+  
+div#root  {
+    max-height: 0px;
+  }
