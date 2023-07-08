@@ -8,6 +8,7 @@ const CLIENT_SECRET = '256582d4f9d04a7f82631a7ec7cf5945'
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
+  const[accessToken, setAccessToken] = useState("")
 
   useEffect(() => {
     var authParameters = {
@@ -19,7 +20,7 @@ function App() {
     }
     fetch('https:///accounts.spotify.com/api/token', authParameters)
     .then(results => results.json())
-    .then(data => console.log(data))
+    .then(data => setAccessToken(data.access_token))
   }, [])
 
   const handleKeyDown = (event) => {

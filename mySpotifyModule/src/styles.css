@@ -4,14 +4,19 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
-
+  width: 100%;
 }
 
 
 body {
-  background-color: rgba(0, 0, 0, 0.0);
   font-weight: 500;
-  font-style: 
+  font-family: 'OCR-B', 'Roboto', 'Arial', 'sans-serif';
+  background-image: url("../public/spotify-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
 
 h2, h1, li {
@@ -36,4 +41,5 @@ ul {
   font-size: 1.5rem;
   background-color: rgba(0, 0, 0, .9);
   border-radius: 10px;
+  list-style-type: none;
 }

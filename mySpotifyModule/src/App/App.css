@@ -4,16 +4,17 @@ html {
   background-image: url("../../public/spotify-bg.jpg");
   background-size: cover;
   height: 100%;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* 
+
 body {
-  background-image: url("../spotify-bg.jpg");
+  background-image: url("../../public/spotify-bg.jpg");
   background-size: cover;
   height: 100%;
-} */
+}
 
 
 h2, h1, li {
