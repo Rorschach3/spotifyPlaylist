@@ -1,0 +1,51 @@
+
+html {
+    background-image: url("../../public/spotify-bg.jpg");
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* 
+  body {
+    background-image: url("../spotify-bg.jpg");
+    background-size: cover;
+    height: 100%;
+  } */
+  
+  
+  h2, h1, li {
+    color: rgba(200, 255, 200, 1);
+  }
+  h2 {
+    display: flex;
+    min-height: 80px;
+    font-size: 2.3rem;
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 30%;
+    font-size: 1.3rem;
+  }
+  
+    body {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+    }
+  
+    #container {
+      display: flex;
+      background: rgba(0, 0, 0, 0.539);
+      flex-direction:column;
+      align-items: baseline;
+      justify-content: center;
+      max-width: 60%;
+      margin-top: 15%;
+      margin-left: 25%;
+    }
