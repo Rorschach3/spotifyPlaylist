@@ -8,7 +8,17 @@
     <script src="src/App.jsx" type="module"></script>
   </head>
   <body>
-    <section id="profile">
+    <header>
+      <section id="navbar">
+        <div id="login">
+          <button id="login-button">Log in with Spotify</button>
+        </div>
+
+      </section>
+      </header>
+      <div className="container">
+      <h1>My Spotify Profile</h1>
+      </div>
     <div id="root"></div>
     <h2>Logged in as <span id="displayName"></span></h2>
     <span id="avatar"></span>
@@ -19,7 +29,6 @@
         <li>Link: <a id="url" href="#"></a></li>
         <li>Profile Image: <span id="imgUrl"></span></li>
     </ul>
-    </section>
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
   </body>
 </html>
