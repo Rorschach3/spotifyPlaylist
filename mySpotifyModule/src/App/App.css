@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background-image: url("../../public/spotify-bg.png");
+  background-image: url("../../public/spotify-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
