@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, InputGroup, FormControl, Button, Card } from "react-bootstrap";
+import { Container, InputGroup, FormControl, Button, Card, Row } from "react-bootstrap";
 
 const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe'
 const CLIENT_SECRET = '256582d4f9d04a7f82631a7ec7cf5945'
@@ -9,6 +9,7 @@ const CLIENT_SECRET = '256582d4f9d04a7f82631a7ec7cf5945'
 function App() {
   const [searchInput, setSearchInput] = useState("");
   const[accessToken, setAccessToken] = useState("")
+  const[albums, setAlbums] = useState([])
 
   useEffect(() => {
     var authParameters = {
@@ -18,31 +19,52 @@ function App() {
       },
       body: 'grant_type=client_credentials&client_id=' + CLIENT_ID + '&client_secret=' + CLIENT_SECRET
     }
-    fetch('https:///accounts.spotify.com/api/token', authParameters)
+    fetch('https://accounts.spotify.com/api/token', authParameters)
     .then(results => results.json())
     .then(data => setAccessToken(data.access_token))
   }, [])
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      console.log("Pressed Enter");
-  };
+  // Search 
+  async function search() {
+    console.log("Search for " + searchInput)
+
+    // Get request using search to get the Artist ID
+    var artistParameters = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + accessToken
+      }
+    }
+    var artistID = await fetch('https://api.spotify.com/v1/search?q='+ searchInput + '&type=artist', searchParameters)
+      .then(response => response.json())
+      .then(data => { return data.artists.items[0].id })
+
+      console.log("Artist ID is " + artistID);
+    // Get request with Artist ID grab all the albums from that artist
+    var returnedAlbums = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums' + '?include_groups=album&market=US&limit=50', artistParameters)
+    .then(response => response.json())
+    .then(data => { return data.items })
+      console.log(data)
+      setAlbums(data.items);
+    //Display all the albums
+  }
 
   return (
     <div className="App">
     <Container>
       <InputGroup className="mb-3" size="lg">
-          <FormControl
-            placeholder="Search for an artist"
-            type="input"
-            onKeyDown={event => {
-              if (event.key == "Enter") {
-                console.log("Pressed Enter");
-              }
-            }}
-            onChange{...event => setSearchInput(event.target.value)}
+        <FormControl
+          placeholder="Search for an artist"
+          type="input"
+          onKeyDown={event => {
+            if (event.key == "Enter") {
+              console.log("Pressed Enter");
+                }
+              }}
+            onChange={event => setSearchInput(event.target.value)}
           />
-          <Button onClick={() => {console.log("Clicked Button")}}>
+          <Button className='btn btn-success' onClick={() => {console.log("Clicked Button")}}>
             Search
           </Button>
         </InputGroup>
@@ -58,7 +80,6 @@ function App() {
           </Row>
         </Container>
         </div>
-    );
+        )
   }
-}
 export default App;

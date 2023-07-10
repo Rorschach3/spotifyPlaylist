@@ -1,38 +1,58 @@
 /* MAINFILE */
 
 html {
-  background-image: url("../../public/spotify-bg.jpg");
+  background-image: url("../../public/spotify-bg.png");
   background-size: cover;
   height: 100%;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  position: absolute;
+  opacity: 100%;
 }
 
 
 body {
-  background-image: url("../../public/spotify-bg.jpg");
+  background-image: url("../../public/spotify-bg.png");
   background-size: cover;
   height: 100%;
+  width: 100%;
+  position:fixed
 }
 
 
 h2, h1, li {
-  color: rgba(200, 255, 200, 1);
+  color: rgb(0, 0, 0);
 }
 h2 {
+  padding-top: 10%;
+  padding-bottom: 20px;
   display: flex;
+  align-items: space-evenly;
+  justify-content: center;
   min-height: 80px;
-  font-size: 2.3rem;
+  font-size: 3rem;
+  right: 50;
 }
 
 ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  padding-left: 30%;
-  font-size: 1.3rem;
+  justify-content: center;
+  padding-left: 20%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  list-style: none;
+  outline-width: 10px;
+  position: sticky;
+  box-shadow: rgba(0, 0, 0, 0.84) 1px 1px 30px;
+  max-width: 40%;
+    padding: 5%;
+    width: auto;
+    left:30%;
+    right:auto;
+    margin-bottom:auto;
 }
 
   body {
@@ -43,11 +63,81 @@ ul {
 
   #container {
     display: flex;
-    background: rgba(0, 0, 0, 0.539);
     flex-direction:column;
     align-items: baseline;
     justify-content: center;
     max-width: 60%;
-    margin-top: 15%;
-    margin-left: 25%;
+    margin-top: 5%;
+    margin-left: 10%;
+    box-shadow:rgb(0, 0, 0);
   }
+  div.App {
+    margin: 5%;
+  }
+
+  div.container {
+    max-height: 2%;
+    width: 60%;
+    min-width: 55%;
+    position: fixed;
+  }
+  .button {
+    color: rgb(15, 234, 15);
+    background-color: rgb(12, 237, 12);
+  }
+
+
+
+  /* ************************************************************************ */
+
+
+  /* Container */
+#root .App .container{
+  left: 15%;
+  right:40%;
+  padding-left:50px;
+  position:absolute;
+  padding-right:20%;
+  margin-left:15%;
+  margin-right:20%;
+  margin-top:5%;
+
+ }
+ 
+ /* Button */
+ #root .App .container .input-group-lg .btn-primary{
+  background-color:#03770d !important;
+  color:rgb(255, 255, 255) !important;
+ }
+ 
+ /* Heading */
+ #profile h2{
+  transform:translatex(561px) translatey(15px);
+  position:relative;
+  padding-top:15%;
+  left:-200px;
+  z-index:0;
+  padding-left:0px;
+  padding-right:0px;
+  margin-left:0px;
+  margin-right:75%;
+  margin-bottom:30px;
+  margin-top:40px;
+ }
+ 
+ /* Heading */
+ div #profile h2{
+  right:auto !important;
+  top:auto !important;
+ }
+ 
+ /* List */
+
+ 
+
+ div.mx-2.row.row-cols-4.row {
+
+  position: relative;
+  margin: 60%;
+  transform: translatey(200px);
+ }
