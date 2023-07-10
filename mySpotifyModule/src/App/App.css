@@ -1,38 +1,31 @@
-/* MAINFILE */
-
 html {
-  background-image: url("../../public/spotify-bg.png");
+  /* background-image: url("../../public/spotify-bg.png"); */
+  background-color: black;
   background-size: cover;
-  height: 100%;
-  width: 100%;
   background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  opacity: 100%;
 }
-
 
 body {
   background-image: url("../../public/spotify-bg.png");
   background-size: cover;
-  height: 100%;
+  background-position: center;
+  background-attachment: fixed;
   width: 100%;
-  position:fixed
+  height: 200%;
 }
 
-
-h2, h1, li {
+h2, h1, ul {
   color: rgb(0, 0, 0);
 }
+
 h2 {
-  padding-top: 10%;
-  padding-bottom: 20px;
+  padding-top: 2%;
+  padding-bottom: 2%;
   display: flex;
-  align-items: space-evenly;
+  align-items: center;
   justify-content: center;
-  min-height: 80px;
-  font-size: 3rem;
-  right: 50;
+  font-size: 4rem;
+  margin: 4% auto;
 }
 
 ul {
@@ -44,100 +37,85 @@ ul {
   font-size: 1.1rem;
   font-weight: 500;
   list-style: none;
-  outline-width: 10px;
-  position: sticky;
-  box-shadow: rgba(0, 0, 0, 0.84) 1px 1px 30px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.54) 1px 1px 10px;
   max-width: 40%;
-    padding: 5%;
-    width: auto;
-    left:30%;
-    right:auto;
-    margin-bottom:auto;
+  padding: 5%;
+  width: auto;
+  left: 30%;
+  right: auto;
+  margin-bottom: auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
 }
 
-  body {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-  }
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 5% auto;
+}
 
-  #container {
-    display: flex;
-    flex-direction:column;
-    align-items: baseline;
-    justify-content: center;
-    max-width: 60%;
-    margin-top: 5%;
-    margin-left: 10%;
-    box-shadow:rgb(0, 0, 0);
-  }
-  div.App {
-    margin: 5%;
-  }
+div.App {
+  margin: 5%;
+  padding-left: 15%;
+}
 
-  div.container {
-    max-height: 2%;
-    width: 60%;
-    min-width: 55%;
-    position: fixed;
-  }
-  .button {
-    color: rgb(15, 234, 15);
-    background-color: rgb(12, 237, 12);
-  }
+div.container {
+  display: flex;
+  align-items: flex-start;
+  max-height: 2%;
+  width: 60%;
+}
 
+/* ************************************************************************ */
 
-
-  /* ************************************************************************ */
-
-
-  /* Container */
-#root .App .container{
+/* Container */
+#root .App .container {
   left: 15%;
-  right:40%;
-  padding-left:50px;
-  position:absolute;
-  padding-right:20%;
-  margin-left:15%;
-  margin-right:20%;
-  margin-top:5%;
+  right: 40%;
+  padding-left: 50px;
+  padding-right: 20%;
+  margin-left: 15%;
+  margin-right: 20%;
+  margin-top: -20px;
+}
 
- }
- 
- /* Button */
- #root .App .container .input-group-lg .btn-primary{
-  background-color:#03770d !important;
-  color:rgb(255, 255, 255) !important;
- }
- 
- /* Heading */
- #profile h2{
-  transform:translatex(561px) translatey(15px);
-  position:relative;
-  padding-top:15%;
-  left:-200px;
-  z-index:0;
-  padding-left:0px;
-  padding-right:0px;
-  margin-left:0px;
-  margin-right:75%;
-  margin-bottom:30px;
-  margin-top:40px;
- }
- 
- /* Heading */
- div #profile h2{
-  right:auto !important;
-  top:auto !important;
- }
- 
- /* List */
+/* Button */
+#root .App .container .input-group-lg .btn-primary {
+  background-color: #04810e !important;
+  color: rgb(255, 255, 255) !important;
+}
 
- 
+#root .App .container .input-group-lg .btn-primary:hover {
+  background-color: #07be16 !important;
+  box-shadow: 0px 0px 10px 0px #e8eee9 !important;
+  border-radius: 5px !important;
+  transition: all 0.2s ease-in-out !important;
+  scale: 1.08 !important;
+}
 
- div.mx-2.row.row-cols-4.row {
+/* Heading */
+#profile h2 {
+  font-weight: 700;
+  padding-top: 5%;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
 
-  position: relative;
-  margin: 60%;
-  transform: translatey(200px);
- }
+.App .row-cols-4 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  transform: translateY(50px);
+  margin-top: 15%;
+}
+
+input.form-control {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1.3px solid rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 5px;
+}

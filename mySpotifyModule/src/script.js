@@ -74,7 +74,11 @@ async function redirectToAuthCodeFlow(clientId) {
     async function fetchProfile(token) {
     const result = await fetch("https://api.spotify.com/v1/me", {
         method: "GET", 
-        headers: { Authorization: `Bearer ${token}` }
+        headers: 
+            { 
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '+ token
+            }
     });
 
     return result.json();
