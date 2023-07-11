@@ -1,7 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, InputGroup, FormControl, Button, Card, Row } from "react-bootstrap";
-import { useState, useEffect } from "react";
 
 const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe'
 const CLIENT_SECRET = '256582d4f9d04a7f82631a7ec7cf5945'
@@ -40,16 +39,14 @@ function App() {
       .then(response => response.json())
       .then(data => data.artists.items[0].id)
 
-    console.log("Artist ID is " + artistID);
+      console.log("Artist ID is " + artistID);
     // Get request with Artist ID grab all the albums from that artist
-    var returnedAlbums = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums' + '?include_groups=album&market=US&limit=50', searchParameters)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.items);
-        setAlbums(data.items);
-      });
-
-    // Display all the albums
+    var returnedAlbums = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums' + '?include_groups=album&market=US&limit=50', artistParameters)
+    .then(response => response.json())
+    .then(data => { return data.items })
+      console.log(data)
+      setAlbums(data.items);
+    //Display all the albums
   }
   console.log(albums);
   return (
@@ -70,20 +67,18 @@ function App() {
             Search
           </Button>
         </InputGroup>
-      </Container>
-      <Container>
-        <Row className="mx-2 row row-cols-4">
-          {albums.map((album, i) => (
-            <Card key={i}>
-              <Card.Img src={album.images[0]} />
-              <Card.Body>
-                <Card.Title>Album Name Here</Card.Title>
-              </Card.Body>
-            </Card>
-          ))}
-        </Row>
-      </Container>
-    </div>
-  );
-}
+        </Container>
+        <Container>
+          <Row className="mx-2 row row-cols-4">
+          <Card>
+            <Card.Img src='#' />
+          <Card.Body>
+            <Card.Title>Album Name Here</Card.Title>
+          </Card.Body>
+          </Card>
+          </Row>
+        </Container>
+        </div>
+        )
+  }
 export default App;
