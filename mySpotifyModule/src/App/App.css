@@ -98,7 +98,7 @@ div.container {
 
 /* Heading */>
 #profile h2 {
-  font-weight: 700;
+  font-weight: 500;
   padding-top: 5%;
   margin-bottom: 30px;
   margin-top: 40px;
@@ -110,10 +110,11 @@ div.container {
   align-items: flex-start;
   transform: translateY(25px);
   margin-top: 15%;
+  overflow: visible;
 }
 
 input.form-control {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.198);
   border: 1.3px solid rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   border-radius: 5px;
@@ -126,14 +127,13 @@ input.form-control {
   display: block;
   right:16% !important;
   transform: translatex(-256px) translatey(1px);
-  width:600px !important;
-  left:0%;
   padding-right:200px;
   padding-left:0px;
   margin-right:140px;
   margin-left:100px;
   margin-top:0px;
   margin-bottom:-21px;
+  overflow: visible;
  }
  
  
