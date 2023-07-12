@@ -3,8 +3,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, InputGroup, FormControl, Button, Card, Row } from "react-bootstrap";
 
-const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe'
-const CLIENT_SECRET = '256582d4f9d04a7f82631a7ec7cf5945'
+const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe';
+const CLIENT_SECRET = '256582d4f9d04a7f82631a7ec7cf5945';
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
@@ -12,57 +12,55 @@ function App() {
   const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
-    var authParameters = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: 'grant_type=client_credentials&client_id=' + CLIENT_ID + '&client_secret=' + CLIENT_SECRET
-    };
-
-    fetch('https://cors-anywhere.herokuapp.com/https://accounts.spotify.com/api/token', authParameters)
-      .then(response => {
+    const fetchAccessToken = async () => {
+      try {
+        const authParameters = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: 'grant_type=client_credentials&client_id=' + CLIENT_ID + '&client_secret=' + CLIENT_SECRET
+        };
+        const response = await fetch('https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://accounts.spotify.com/api/token', authParameters);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        return response.json();
-      })
-      .then(data => {
+        const data = await response.json();
         setAccessToken(data.access_token);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error:', error.message);
-      });
+      }
+    };
+    fetchAccessToken();
   }, []);
 
   async function search() {
     console.log("Search for " + searchInput);
 
-    var searchParameters = {
+    const searchParameters = {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + accessToken,
+        'x-requested-with': 'XMLHttpRequest'
       }
     };
-
     try {
-      var artistID = await fetch('https://api.spotify.com/v1/search?q=' + searchInput + '&type=artist', searchParameters)
-      if (!artistIDResponse.ok) {
+      const artistSearchResponse = await fetch('https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://api.spotify.com/v1/search?q=' + searchInput + '&type=artist', searchParameters);
+      if (!artistSearchResponse.ok) {
         throw new Error('Network response was not ok');
       }
-      var data = await artistIDResponse.json();
-      var artistID = data.artists.items[0].id
+      const artistSearchData = await artistSearchResponse.json();
+      const artistID = artistSearchData.artists.items[0].id;
 
-      console.log(artistID);
-
-      var returnedAlbumsResponse = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums?include_groups=album,single&limit=50&market=US', searchParameters);
-      if (!returnedAlbumsResponse.ok) {
+      console.log("Artist ID is " + artistID);
+      // Get request with Artist ID to grab all the albums from that artist
+      const albumsResponse = await fetch('https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://api.spotify.com/v1/artists/' + artistID + '/albums?include_groups=album&market=US&limit=50', searchParameters);
+      if (!albumsResponse.ok) {
         throw new Error('Network response was not ok');
       }
-      var returnedAlbumsData = await returnedAlbumsResponse.json();
-      var returnedAlbums = returnedAlbumsData.items;
-      
+      const albumsData = await albumsResponse.json();
+      const returnedAlbums = albumsData.items;
 
       console.log(returnedAlbums);
       setAlbums(returnedAlbums);
@@ -95,14 +93,16 @@ function App() {
         </InputGroup>
       </Container>
       <Container>
-        <Row className="mx-2 row row-cols-4">
+        <Row className="mx-2 row row-2-cols-4">
           {albums.map((album, i) => {
             console.log(album);
             return (
               <Card key={i}>
-                <Card.Img src={album.images[0].url} />
+                <Card.Img src={album.images} />
+
                 <Card.Body>
                   <Card.Title>{album.name}</Card.Title>
+                  
                 </Card.Body>
               </Card>
             );
