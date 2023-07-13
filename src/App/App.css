@@ -1,12 +1,5 @@
-html {
-  /* background-image: url("../../public/spotify-bg.png"); */
-  background-color: black;
-  background-size: cover;
-  background-position: center;
-}
-
 body {
-  background-image: url("../../public/spotify-bg.png");
+  background-image: url("../../public/desktop-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -96,7 +89,7 @@ div.container {
   scale: 0.78 !important;
 }
 
-/* Heading */>
+/* Heading */
 #profile h2 {
   font-weight: 500;
   padding-top: 5%;
