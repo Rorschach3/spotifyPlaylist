@@ -34,7 +34,9 @@ function App() {
     fetchAccessToken();
   }, []);
 
-  async function search() {
+    //Search
+
+  async function search() {      // Taylor Swift
     console.log("Search for " + searchInput);
 
     const searchParameters = {
@@ -114,3 +116,8 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
