@@ -1,7 +1,7 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "description": "React example starter project",
+  "description": "spotify playlist app",
   "keywords": [
     "react",
     "starter"
@@ -40,9 +40,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "server": "node server",
-    "dev": "run-p server start",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "dev": "run-p server start"
   },
   "browserslist": [
     ">0.2%",

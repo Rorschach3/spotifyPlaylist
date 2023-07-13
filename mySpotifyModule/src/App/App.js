@@ -93,12 +93,12 @@ function App() {
         </InputGroup>
       </Container>
       <Container>
-        <Row className="mx-2 row row-2-cols-4">
+        <Row className="mx-2 row row-cols-4">
           {albums.map((album, i) => {
             console.log(album);
             return (
               <Card key={i}>
-                <Card.Img src={album.images} />
+                <Card.Img src={album.images[1].url} />
 
                 <Card.Body>
                   <Card.Title>{album.name}</Card.Title>
