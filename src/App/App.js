@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, InputGroup, FormControl, Button, Card, Row } from "react-bootstrap";
+import { Container, Card, Row } from "react-bootstrap";
+import SearchBar from "./SearchBar";
 
 var client_id = process.env.SPOTIFY_CLIENT_ID
 var client_secret = process.env.SPOTIFY_CLIENT_SECRET
 
 function App() {
-  const [searchInput, setSearchInput] = useState("");
   const [accessToken, setAccessToken] = useState("");
   const [albums, setAlbums] = useState([]);
 
@@ -36,64 +36,13 @@ function App() {
 
     //Search
 
-  async function search() {      // Taylor Swift
-    console.log("Search for " + searchInput);
-
-    const searchParameters = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + accessToken,
-        'x-requested-with': 'XMLHttpRequest'
-      }
-    };
-    try {
-      const artistSearchResponse = await fetch('https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://api.spotify.com/v1/search?q=' + searchInput + '&type=artist', searchParameters);
-      if (!artistSearchResponse.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const artistSearchData = await artistSearchResponse.json();
-      const artistID = artistSearchData.artists.items[0].id;
-
-      console.log("Artist ID is " + artistID);
-      // Get request with Artist ID to grab all the albums from that artist
-      const albumsResponse = await fetch('https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://api.spotify.com/v1/artists/' + artistID + '/albums?include_groups=album&market=US&limit=50', searchParameters);
-      if (!albumsResponse.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const albumsData = await albumsResponse.json();
-      const returnedAlbums = albumsData.items;
-
-      console.log(returnedAlbums);
-      setAlbums(returnedAlbums);
-    } catch (error) {
-      console.error('Error:', error.message);
-    }
+  const search = (searchInput) => {
   }
-
+  
   console.log(albums);
-
   return (
     <div className="App">
-      <Container>
-        <InputGroup className="mb-3" size="lg">
-          <FormControl
-            autoComplete="on"
-            autoCorrect="on"
-            placeholder="Search for an artist"
-            type="input"
-            onKeyPress={event => {
-              if (event.key === "Enter") {
-                search();
-              }
-            }}
-            onChange={event => setSearchInput(event.target.value)}
-          />
-          <Button className="btn btn-success" onClick={search}>
-            Search
-          </Button>
-        </InputGroup>
-      </Container>
+      <SearchBar onSearch={search} />
       <Container>
         <Row className="mx-2 row row-cols-2">
           {albums.map((album, i) => {
@@ -116,8 +65,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-

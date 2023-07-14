@@ -1,14 +1,38 @@
-import React, { useState } from 'react';
-import './SearchBar'
+import { on } from "events";
+import React, { useState, useEffect } from "react";
+import { Container, InputGroup, FormControl, Button } from "react-bootstrap";
 
-const SearchBar = () => {
+function SearchBar({ onSearch }) {  // Taylor Swift
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      onSearch(searchInput);
+    }
+  };
+
+
+  const handleInputChange = (event) => {
+    setSearchInput(event.target.value);
+  };
 
 
   return (
-        <>
-        <input placeholder="search" />
-        <button>Search</button></>
-  );
+    <Container>
+      <InputGroup className="mb-3" size="lg">
+        <FormControl
+          autoComplete="on"
+          autoCorrect="on"
+          placeholder="Search for an artist"
+          type="input"
+          onKeyPress={handleKeyPress}
+          onChange={handleInputChange}  
+        />
+        <Button className="btn btn-success" onClick={() => onSearch(searchInput)}>
+          Search
+        </Button>
+      </InputGroup>
+    </Container>
+  ) 
 }
-
 export default SearchBar;
