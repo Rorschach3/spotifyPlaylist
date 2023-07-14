@@ -3,8 +3,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, InputGroup, FormControl, Button, Card, Row } from "react-bootstrap";
 
-const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe';
-const CLIENT_SECRET = '256582d4f9d04a7f82631a7ec7cf5945';
+var client_id = process.env.SPOTIFY_CLIENT_ID
+var client_secret = process.env.SPOTIFY_CLIENT_SECRET
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
@@ -19,7 +19,7 @@ function App() {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           },
-          body: 'grant_type=client_credentials&client_id=' + CLIENT_ID + '&client_secret=' + CLIENT_SECRET
+          body: 'grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + client_secret
         };
         const response = await fetch('https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://accounts.spotify.com/api/token', authParameters);
         if (!response.ok) {
