@@ -2,7 +2,7 @@
 
 ## Usage/Examples
 
-[screenshot](public\Example.png)
+[screenshot]("./public/example.png")
 
 ##### Installation
 
@@ -11,16 +11,22 @@
 `git clone https://github.com/Rorschach3/spotifyPlaylist.git`
 
 Before starting the server, make sure you have all the necessary files and dependencies installed. You can do this by running either of the following commands:
-#### `npm i`      (`npm install`)
-or 
-#### `yarn install` 
+
+##### `npm i`      (`npm install`)
+
+or
+
+##### `yarn install`
 
 ---
 
 2. Once the installation is complete, start the server by running either of the following commands:
-#### npm start
+
+##### `npm start`
+
 or
-#### yarn start
+
+##### `yarn start`
 
 ---
 
