@@ -4,7 +4,9 @@ body {
   background-position: center;
   background-attachment: fixed;
   width: 100%;
-  height: 200%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 h2, h1, ul {
@@ -12,11 +14,8 @@ h2, h1, ul {
 }
 
 h2 {
-  padding-top: 2%;
-  padding-bottom: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 2% 0;
+  text-align: center;
   font-size: 4rem;
   margin: 4% auto;
 }
@@ -24,54 +23,42 @@ h2 {
 ul {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding-left: 20%;
+  align-items: center;
+  padding-left: 0;
   font-size: 1.1rem;
   font-weight: 500;
   list-style: none;
-  position: relative;
   box-shadow: rgba(0, 0, 0, 0.54) 1px 1px 10px;
-  max-width: 40%;
+  max-width: 80%;
   padding: 5%;
-  width: auto;
-  left: 30%;
-  right: auto;
-  margin-bottom: auto;
-  background-color: rgb(255, 255, 255);
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, .75);
   border-radius: 10px;
 }
 
 #container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  width: 50%;
   margin: 5% auto;
 }
 
 div.App {
   margin: 5%;
-  padding-left: 20%;
+  padding-left: 0;
 }
 
 div.card {
   display: grid;
-  align-items: space-evenly;
-  justify-content: center;
+  place-items: center;
 }
 
 /* ************************************************************************ */
 
 /* Container */
 #root .App .container {
-  left: 15%;
-  right: 40%;
-  padding-left: 50px;
-  padding-right: 20%;
-  margin-left: 15%;
-  margin-right: 20%;
-  margin-top: -20px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px;
 }
 
 /* Button */
@@ -94,11 +81,11 @@ div.card {
   padding-top: 5%;
   margin-bottom: 30px;
   margin-top: 40px;
+  text-align: center;
 }
 
-.App .row-cols-4 {
+.App .row-cols-3 {
   display: flex;
-  flex-direction: row;
   align-items: center;
   transform: translateY(25px);
   margin-top: 15%;
@@ -113,32 +100,45 @@ input.form-control {
   padding: 5px;
 }
 
-
 /* Container */
 #root .App .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translatex(-256px) translatey(1px);
-  width:600px !important;
-  left:0%;
-  padding-right:80px;
-  padding-left:100px;
-  margin-right:100px;
-  margin-left:150px;
-  margin-top:0px;
-  margin-bottom:-21px;
-  overflow: visible;
- }
- 
+  width: 600px !important;
+  margin: 0 auto;
+  padding: 50px;
+}
+
 div.mb-3.input-group.input-group-lg {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translatex(-256px)
- }
+}
 
- img.card-img {
-  height: 640px;
-  width: 640px;
- }
+img.card-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Inline #0 | http://localhost:3000/ */
+
+#root .App .container {
+  width: 829px !important;
+  margin: 0 auto;
+  padding-left: 144px;
+  padding-right: 161px;
+}
+
+/* Element | http://localhost:3000/ */
+
+#profile > ul:nth-child(3) {
+  padding: 10px 16px;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.mb-3.input-group.input-group-lg:focus {
+  background-color: rgba(246, 246, 246, 0.125);
+}
