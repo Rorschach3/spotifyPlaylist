@@ -95,7 +95,7 @@ function App() {
         </InputGroup>
       </Container>
       <Container>
-        <Row className="mx-2 row row-cols-2">
+        <Row className="mx-2 row row-cols-3">
           {albums.map((album, i) => {
             console.log(album);
             return (
