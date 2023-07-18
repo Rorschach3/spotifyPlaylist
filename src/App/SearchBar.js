@@ -1,5 +1,4 @@
-import { on } from "events";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container, InputGroup, FormControl, Button } from "react-bootstrap";
 
 function SearchBar({ onSearch }) {  // Taylor Swift

@@ -1,19 +1,22 @@
 {
-  "name": "react",
-  "version": "1.0.0",
+  "name": "spotify-web-player",
+  "version": "0.1.0",
   "description": "spotify playlist app",
   "keywords": [
     "react",
     "starter"
   ],
-  "main": "src/index.js",
+  "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
     "allow-cors": "^1.0.0",
     "bootstrap": "^5.3.0",
-    "cool-ascii-faces": "^1.3.4",
     "cors": "^2.8.5",
     "crypto-browserify": "^3.12.0",
     "express-csp-header": "^5.1.0",
+    "flow-bin": "^0.212.0",
     "loader-utils": "3.2.1",
     "nextjs-cors": "^2.1.2",
     "os-browserify": "^0.3.0",
@@ -22,33 +25,47 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "5.0.1",
     "response": "^0.18.0",
     "row": "^0.0.1",
     "stream": "^0.0.2",
-    "url": "^0.11.1",
-    "webpack": "^5.88.1"
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5"
   },
   "devDependencies": {
-    "@babel/runtime": "7.13.8",
     "@types/react-dom": "^18.2.6",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "npm-run-all": "^4.1.5",
+    "request": "^2.88.2",
     "typescript": "4.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "server": "node server",
-    "dev": "run-p server start"
+    "dev": "run-p server start",
+    "flow": "flow"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "author": "",
   "license": "ISC"
 }

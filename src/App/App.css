@@ -1,4 +1,4 @@
-body {
+html, body {
   background-image: url("../../public/spotify-bg.png");
   background-size: cover;
   background-position: center;
