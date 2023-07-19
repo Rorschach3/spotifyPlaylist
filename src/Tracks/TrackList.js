@@ -2,18 +2,18 @@ import React from 'react';
 import Track from "..Track/Track"
 
 
-const Tracklist = () => {
+const Playlist = () => {
     // TODO: Tracklist API logic
     
     return (
         <>
         <div>
-            <Tracklist />
+            <Playlist />
         </div>
-        <div className="Track">
+        <div className="Playlist">
             <Track />
         </div>
         </>
     )
 }
-export default Tracklist;
+export default Playlist;

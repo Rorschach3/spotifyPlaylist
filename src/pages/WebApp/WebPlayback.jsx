@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-const track = {
-  name: "",
-  album: {
-    images: [
-      { url: "" }
-    ]
-  },
-  artists: [
-    { name: "" }
-  ]
-};
+const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
+const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/callback/";
+const SPACE_DELIMITER = "%20";
+const SCOPES = ['user-read-currently-playing', 'user-read-playback-state', 'streaming', 'user-read-email', 'user-read-private', 'user-modify-playback-state', 'user-read-recently-played', 'user-library-read', 'user-library-modify', 'user-top-read', 'user-read-playback-position', 'user-read-currently-playing', 'user-read-recently-played', 'user-follow-read', 'user-follow-modify'];
+const SCOPES_URL_PARAM = SCOPES.join("%20");
 
 function WebPlayback(props) {
   const [isPaused, setPaused] = useState(false);
   const [isActive, setActive] = useState(false);
   const [player, setPlayer] = useState(undefined);
-  const [currentTrack, setTrack] = useState(track);
+  const [currentTrack, setTrack] = useState(null); // Remove the 'track' from the useState declaration
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -67,7 +61,7 @@ function WebPlayback(props) {
     };
   }, [props.token]);
 
-  if (!isActive) {
+  if (!isActive || !currentTrack) { // Add a check for 'currentTrack'
     return (
       <>
         <div className="container">
