@@ -4,13 +4,13 @@ const dotenv = require('dotenv');
 
 const port = 5000
 
-var access_token = ''
+var accessToken = ''
 
 dotenv.config()
 
   // Credentials 
-var spotify_client_id = process.env.SPOTIFY_CLIENT_ID
-var spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET
+var client_id = process.env.SPOTIFY_CLIENT_ID
+var client_secret = process.env.SPOTIFY_CLIENT_SECRET
 
 var spotify_redirect_uri = 'http://localhost:3000/auth/callback'
 
@@ -33,13 +33,13 @@ app.get('/auth/login', (req, res) => {
 
   var auth_query_parameters = new URLSearchParams({
     response_type: "code",
-    client_id: spotify_client_id,
+    client_id: client_id,
     scope: scope,
     redirect_uri: spotify_redirect_uri,
     state: state
   })
             // authorization Base64 encoded key for access token
-  res.redirect('https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString());
+  res.redirect('https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString());
 })
 
 app.get('/auth/callback', (req, res) => {
@@ -54,7 +54,7 @@ app.get('/auth/callback', (req, res) => {
       grant_type: 'authorization_code'
     },
     headers: {
-      'Authorization': 'Basic ' + (Buffer.from(spotify_client_id + ':' + spotify_client_secret).toString('base64')),
+      'Authorization': 'Basic ' + (Buffer.from(`${client_id}:${client_secret}`).toString('base64')),
       'Content-Type' : 'application/x-www-form-urlencoded'
     },
     json: true
@@ -62,7 +62,7 @@ app.get('/auth/callback', (req, res) => {
           // if error logging in then redirect to login page
   request.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
-      access_token = body.access_token;
+      accessToken = body.accessToken;
       res.redirect('/')
     }
   });
@@ -70,7 +70,7 @@ app.get('/auth/callback', (req, res) => {
 })
 
 app.get('/auth/token', (req, res) => {
-  res.json({ access_token: access_token})
+  res.json({ accessToken: accessToken})
 })
 
 app.listen(port, () => {

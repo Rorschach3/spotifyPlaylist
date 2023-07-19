@@ -12,31 +12,22 @@ function Main() {
   const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
-    const fetchAccessToken = async () => {
-      try {
-        const authParameters = new URLSearchParams();
-        authParameters.append('grant_type', 'client_credentials');
-        authParameters.append('client_id', CLIENT_ID);
-        authParameters.append('client_secret', CLIENT_SECRET);
-
-        const response = await fetch(
-          'https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://accounts.spotify.com/api/token',
-          {
+      const fetchAccessToken = async () => {
+        try {
+          const authParameters = {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-              'Origin': 'http://localhost:3000',
+              'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: authParameters,
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+            body: 'grant_type=client_credentials&client_id=' + CLIENT_ID + '&client_secret=' + CLIENT_SECRET
+          };
+          const response = await fetch('https://accounts.spotify.com/api/token', authParameters);
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
-        setAccessToken(data.access_token);
+        setAccessToken(data.accessToken);
       } catch (error) {
         console.error('Error:', error.message);
       }
@@ -45,45 +36,44 @@ function Main() {
     fetchAccessToken();
   }, []);
 
-  const search = async () => {
-    try {
-      const searchResponse = await fetch(
-        `https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://api.spotify.com/v1/search?q=${searchInput}&type=artist`,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            'Origin': 'http://localhost:3000',
-          },
-        }
-      );
+  // const search = async () => {
+  //   try {
+  //     const searchResponse = await fetch(
+  //       `https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://api.spotify.com/v1/search?q=${searchInput}&type=artist`,
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${accessToken}`,
+  //         },
+  //       }
+  //     );
 
-      if (!searchResponse.ok) {
-        throw new Error('Error searching for artist');
-      }
+  //     if (!searchResponse.ok) {
+  //       throw new Error('Error searching for artist');
+  //     }
 
-      const searchData = await searchResponse.json();
-      const artistID = searchData.artists.items[0].id;
+  //     const searchData = await searchResponse.json();
+  //     const artistID = searchData.artists.items[0].id;
 
-      const albumsResponse = await fetch(
-        `https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://api.spotify.com/v1/artists/${artistID}/albums?include_groups=album&market=US&limit=50`,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
+  //     const albumsResponse = await fetch(
+  //       `https://mighty-everglades-40374-c435b0bfaf68.herokuapp.com/https://api.spotify.com/v1/artists/${artistID}/albums?include_groups=album&market=US&limit=50`,
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${accessToken}`,
+  //         },
+  //       }
+  //     );
 
-      if (!albumsResponse.ok) {
-        throw new Error('Error fetching albums');
-      }
+  //     if (!albumsResponse.ok) {
+  //       throw new Error('Error fetching albums');
+  //     }
 
-      const albumsData = await albumsResponse.json();
-      const returnedAlbums = albumsData.items;
-      setAlbums(returnedAlbums);
-    } catch (error) {
-      console.error('Error:', error.message);
-    }
-  };
+  //     const albumsData = await albumsResponse.json();
+  //     const returnedAlbums = albumsData.items;
+  //     setAlbums(returnedAlbums);
+  //   } catch (error) {
+  //     console.error('Error:', error.message);
+  //   }
+  // };
 
   return (
     <div className="App">
@@ -101,7 +91,7 @@ function Main() {
             }}
             onChange={event => setSearchInput(event.target.value)}
           />
-          <Button className="btn btn-success" onClick={search}>
+          <Button className="btn btn-success" onClick={S   .earchBar}>
             Search
           </Button>
         </InputGroup>
