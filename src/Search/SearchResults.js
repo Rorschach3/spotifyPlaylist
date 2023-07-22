@@ -8,10 +8,10 @@ function SearchResults(props) {
             <h2>Results</h2>
             <div className="Tracks">
             {
-                props.Tracks.map(Track => {
-                    return(<Track
-                        key={Track.id}
-                        track={Track}
+                props.Tracks.map(track => {
+                    return(<Tracks
+                        key={track.id}
+                        track={track}
                         trackActionCharacter="+"
                         handleTrackAction={props.addTrackToPlaylist}/>)
                 })

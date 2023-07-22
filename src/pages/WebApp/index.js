@@ -1,3 +1,3 @@
-import WebApp from "../../pages/WebApp";
+import WebPlayback from ".";
 
-export default WebApp;
+export default WebPlayback;

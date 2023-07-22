@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import './Track.css'
+import './Tracks.css'
 
-function Track(props) {
+function Tracks(props) {
     return (
         <div className="Track">
             <div className="Track-information">
@@ -17,4 +17,4 @@ function Track(props) {
     )
 }
 
-export default Track;
+export default Tracks;

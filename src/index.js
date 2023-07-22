@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./App/App"
 import * as serviceWorker from "./serviceWorker";
 import { FirebaseContext } from "./context/FirebaseContext";
-import { firebase } from "./firebase/config";
+import { firebase } from "./context/firebaseConfig";
 import { ProvideAuth } from "./context/AuthContext";
 
 ReactDOM.render(

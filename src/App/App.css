@@ -1,0 +1,156 @@
+html, body {
+  background-image: url("../../public/spotify-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-weight: 500;
+  height: 100%;
+  padding: 0 17% 10% 17%;
+}
+
+h2, h1, ul {
+  color: rgb(0, 0, 0);
+}
+
+h2 {
+  padding: 2% 0;
+  text-align: center;
+  font-size: 4rem;
+  margin: 4% auto;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  list-style: none;
+  box-shadow: rgba(0, 0, 0, 0.54) 1px 1px 10px;
+  max-width: 80%;
+  padding: 5%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 10px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  margin: 5% auto;
+}
+
+div.App {
+  margin: 5%;
+  padding-left: 0;
+}
+
+div.card {
+  display: grid;
+  place-items: center;
+}
+
+/* ************************************************************************ */
+
+/* Container */
+#root .App .container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+/* Button */
+#root .App .container .input-group-lg .btn-primary {
+  background-color: #04810e !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+#root .App .container .input-group-lg .btn-primary:hover {
+  background-color: #07be16 !important;
+  box-shadow: 0px 0px 10px 0px #e8eee9 !important;
+  border-radius: 5px !important;
+  transition: all 0.2s ease-in-out !important;
+  scale: 0.78 !important;
+}
+
+/* Heading */
+#profile h2 {
+  font-weight: 500;
+  padding-top: 5%;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.App .row-cols-3 {
+  display: flex;
+  align-items: center;
+  transform: translateY(25px);
+  margin-top: 15%;
+  overflow: visible;
+}
+
+input.form-control {
+  background-color: rgba(0, 0, 0, 0.198);
+  border: 1.3px solid rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* Container */
+#root .App .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px !important;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+div.mb-3.input-group.input-group-lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img.card-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Inline #0 | http://localhost:3000/ */
+
+#root .App .container {
+  width: 829px !important;
+  margin: 0 auto;
+  padding-left: 144px;
+  padding-right: 161px;
+}
+
+/* Element | http://localhost:3000/ */
+
+#profile > ul:nth-child(3) {
+  padding: 10px 16px;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.mb-3.input-group.input-group-lg:focus {
+  background-color: rgba(246, 246, 246, 0.125);
+}
+.App-playlist {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1020px) {
+  .App-playlist {
+    align-items: center;
+    flex-direction: column;
+  }
+}

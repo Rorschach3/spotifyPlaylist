@@ -3,9 +3,9 @@ import React, {useState} from 'react'
 import './Playlist.css'
 import Track from '../Tracks/Tracks'
 
-function Playlist(props) {
-
 const [playlistName, setPlaylistName] = useState("New Playlist");
+
+function Playlist(props) {
 
 async function handleSave() {
     const trackIds = props.tracks.map(t => t.id)

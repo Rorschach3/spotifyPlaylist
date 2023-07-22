@@ -3,14 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
 import "./App.css";
 import NavigationBar from "./components/NavigationBar";
-import SignUpForm from "./components/SignUpForm";
-import WebApp from "./components/WebApp";
+import WebPlayback from "./firebase/pages/WebPlayback/WebPlayback";
 import LoginForm from "./components/LoginForm/LoginForm";
+import SignUpForm from "./components/SignUpForm/SignUpForm";
 import { useAuth } from "./context/AuthContext";
-import Nav from './Nav';
+import Nav from "./components/Nav";
 import Main from './Main';
-import Login from './Login';
-
 
 const Mainpage = () => {
   const { isLoading } = useAuth();
@@ -19,16 +17,12 @@ const Mainpage = () => {
   ) : (
     <Router>
       <NavigationBar />
-
+      <Nav />
       <Switch>
         <Route path={ROUTES.SIGN_UP} component={SignUpForm} />
         <Route path={ROUTES.LOGIN} component={LoginForm} />
-        <Route path={ROUTES.SURVEY} component={Survey} />
-        <Route path={ROUTES.ANSWERS} component={Answers} />
-        <PrivateRoute path={ROUTES.WEB_APP}>
-          <WebApp />
-        </PrivateRoute>
-        <Route path={ROUTES.HOME} component={Hero} />
+        <Route path={ROUTES.WebPlayback}component={WebPlayback} />
+        <Route path={ROUTES.HOME} component={Main} />
       </Switch>
     </Router>
   );
