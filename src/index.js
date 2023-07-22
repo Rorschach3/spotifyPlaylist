@@ -1,21 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import App from "./App/App"
+import App from "./Mainpage";
 import * as serviceWorker from "./serviceWorker";
-import { FirebaseContext } from "./context/FirebaseContext";
-import { firebase } from "./context/firebaseConfig";
-import { ProvideAuth } from "./context/AuthContext";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <FirebaseContext.Provider value={{ firebase }}>
-      <ProvideAuth>
-        <App />
-      </ProvideAuth>
-    </FirebaseContext.Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
+createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
 
 // If you want your app to work offline and load faster, you can change

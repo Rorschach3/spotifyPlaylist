@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import WebPlayback from './firebase/pages/WebApp/WebPlayback.jsx'
+import Mainpage from './Mainpage.js'
 import Login from './components/LoginForm/LoginForm'
+import './Main.css';
 
 function Main() {
 
@@ -20,7 +21,7 @@ function Main() {
 
   return (
     <>
-        { (token === '') ? <Login/> : <WebPlayback token={token} /> }
+        { (token === '') ? <Nav /> : <Mainpage /> }
     </>
   );
 }

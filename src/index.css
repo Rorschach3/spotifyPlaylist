@@ -30,10 +30,18 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1.Header {
+  font-size: 3rem;
+  color: rgb(9, 182, 9);
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  margin-bottom: 1em;
+  margin-top: 0;
+
+
 }
+
 
 button {
   border-radius: 8px;
@@ -80,4 +88,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html, body {
+  background-image: url("/public/spotify-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-weight: 500;
+  height: 100%;
+  padding: 5% 5% 40% 17%;
 }
