@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, InputGroup, FormControl, Button, Card, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from './Nav';
 
 const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe'
 const CLIENT_SECRET = '256582d4f9d04a7f82631a7ec7cf5945';
@@ -73,6 +74,7 @@ function Mainpage() {
 
   return (
     <>
+      <Nav />
       <h1 className="Header">Spotify API Artist Search</h1>
       <Container>
         <InputGroup className="mb-3" size="lg">

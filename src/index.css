@@ -340,3 +340,35 @@ div.card:hover {
   transition: all 0.4s ease-in-out !important;
   scale: 1.03 !important;
 }
+
+/*  ************************************************************************************** */
+
+
+ /* Navigation */
+ #root nav{
+  top: 0px;
+  margin-top:2em;
+  width:100%;
+  height:150px;
+  background-color:rgba(0, 0, 0, 0.0);
+  color: rgb(246, 246, 246);
+  position: sticky;
+  top: 0px;
+
+ }
+/* List */
+#navbarToggler ul{
+  margin-right:0px;
+  margin-left:0px;
+  overflow:hidden;
+  width:1250px;
+  transform: translatex(-256px) translatey(-135px);
+ }
+ 
+  
+#root.nav {
+  background-color: rgba(0, 0, 0, 0.0);
+  color: rgba(246, 246, 246, 0);
+  width: 200vh;
+  height: 100px;
+}

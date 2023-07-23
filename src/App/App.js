@@ -1,35 +1,23 @@
-import React from "react";
-import { BrowserRouter as ROUTES, Router, Switch, Route } from "react-router-dom";
-import * as ROUTES from "../constants/routes";
-import "./App.css";
-// import NavigationBar from "./components/NavigationBar";
-// import WebPlayback from "./pages/WebPlayback/WebPlayback";
-// import LoginForm from "../components/LoginForm/LoginForm";
-// import SignUpForm from "../components/SignUpForm/SignUpForm";
-import Nav from "./components/Nav";
-import Main from "../Main";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Mainpage from './Mainpage';
+import SignUpForm from './components/SignUpForm/SignUpForm';
+import Login from './components/LoginForm/Login';
+import WebPlayer from './WebPlayer'; // Import the WebPlayer component
 
 const App = () => {
-  const { isLoading } = useAuth();
-
-  return isLoading ? (
-    <h1>hold on, loading...</h1>
-  ) : (
+  return (
     <div className="container">
       <Router>
-        <NavigationBar />
         <Nav />
         <Switch>
-          <Route path="/Nav">
-            {/* <Route path={ROUTES.SIGN_UP} component={SignUpForm} />
-            <Route path={ROUTES.LOGIN} component={LoginForm} />
-            <Route path={ROUTES.WEB_PLAYBACK} component={WebPlayback} /> */}
-            <Route path={ROUTES.MAIN} component={Main} />
-          </Route>
+          <Route exact path="/" component={Mainpage} />
+          <Route path="/signUp" component={SignUpForm} />
+          <Route path="/signIn" component={Login} />
+          <Route path="/webPlayer" component={WebPlayer} /> Add this route
         </Switch>
       </Router>
     </div>
-  )
+  );
 };
 
 export default App;
