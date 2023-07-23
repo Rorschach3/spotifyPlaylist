@@ -23,10 +23,9 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
+  box-sizing: border-box;
   place-items: center;
-  min-width: 100vh;
+  min-width: 100%;
   min-height: 100vh;
 }
 
@@ -83,8 +82,16 @@ button:focus-visible {
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("/public/spotify-bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-weight: 400;
+  height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -133,11 +140,6 @@ ul {
   border-radius: 10px;
 }
 
-#container {
-  display: flex;
-  justify-content: center;
-  margin: 5% auto;
-}
 
 div.App {
   margin: 5%;
@@ -280,22 +282,6 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: url("/public/spotify-bg.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  font-weight: 400;
-  height: 100%;
-  padding: 3vh 20vh 40vh 28vh;
-}
 
 h1.Header {
   font-size: 2.5rem;
@@ -372,3 +358,127 @@ div.card:hover {
   width: 200vh;
   height: 100px;
 }
+
+
+ul.navbar-nav.mr-auto.mt-2.mt-lg-1 {
+  background-color: rgba(0, 0, 0, 0.138);
+  color: rgb(246, 246, 246);
+  width: 200%;
+  height: 100px;
+  box-shadow: rgba(0,0,0,.2)
+}
+
+a.nav-link {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  position: sticky;
+  top: 0px;
+  margin-top: 0px;
+}
+
+
+ul.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+ul.navbar-nav li {
+  list-style: none;
+  margin-right: 10px;
+}
+
+ul.navbar-nav li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+ul.navbar-nav li a:hover {
+  background-color: #646cff;
+}
+
+
+/* Navigation */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+ul.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+ul.navbar-nav li {
+  list-style: none;
+  margin-right: 10px;
+}
+
+ul.navbar-nav li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+ul.navbar-nav li a:hover {
+  background-color: #646cff;
+}
+
+
+/* List */
+.navbar ul{
+  position:relative;
+  top:-9px;
+  transform: translatex(-20px) translatey(-130px);
+  max-width:100em;
+  max-height:1em;
+  padding-right:2px;
+  padding-top:20px;
+  padding-bottom:20px;
+  margin-left:-50px;
+  margin-right:-50px;
+  margin-bottom:10px;
+  flex-wrap:nowrap;
+  flex:0 0 auto;
+  align-self:auto;
+  justify-content:space-between;
+  align-items:center;
+  flex-direction:row;
+  position: sticky;
+  top: 0px;
+ }
+ 
+ /* List */
+ #root .navbar .container ul{
+  width:1353px !important;
+ }
+ 
+ @media (min-width:992px){
+ 
+  /* List */
+  .navbar ul{
+   margin-top:10px !important;
+  }
+  
+ }
+
+ /* Input group */
+#root .input-group-lg{
+  left:-3px;
+  top:1px;
+  transform: translatex(358px) translatey(25px);
+ }
+ 
+ /* Input group */
+ #root .container .input-group-lg{
+  width:36% !important;
+ }
+ 
+ 

@@ -10,10 +10,10 @@ const App = () => {
       <Router>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Mainpage} />
+          <Route path="/" component={Mainpage} />
           <Route path="/signUp" component={SignUpForm} />
           <Route path="/signIn" component={Login} />
-          <Route path="/webPlayer" component={WebPlayer} /> Add this route
+          <Route path="/webPlayer" component={WebPlayer} />
         </Switch>
       </Router>
     </div>

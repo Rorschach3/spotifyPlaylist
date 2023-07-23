@@ -18,12 +18,7 @@ ul {
   flex-direction: column;
   align-items: space-evenly;
   justify-content: center;
-  margin-left: 30%;
   font-size: 2.3rem;
   background-color: rgba(0, 0, 0, 0.6);
 }
-  
-div#root  {
-    max-height: 0px;
-  }
 
