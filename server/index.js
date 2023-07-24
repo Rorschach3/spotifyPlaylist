@@ -1,16 +1,16 @@
-import express from 'express';
-import { post } from 'request';
-import { config } from 'dotenv';
+const express = require('express')
+const request = require('request');
+const dotenv = require('dotenv');
 
 const port = 5000
 
 var accessToken = ''
 
-config()
+dotenv.config()
 
   // Credentials 
-var client_id = process.env.SPOTIFY_CLIENT_ID
-var client_secret = process.env.SPOTIFY_CLIENT_SECRET
+const client_id = '684f2f7c27fc4e6eac20d56f7b4da9fe'
+const client_secret = '256582d4f9d04a7f82631a7ec7cf5945';
 
 var spotify_redirect_uri = 'http://localhost:3000/auth/callback'
 
@@ -60,7 +60,7 @@ app.get('/auth/callback', (req, res) => {
     json: true
   };
           // if error logging in then redirect to login page
-  post(authOptions, function(error, response, body) {
+  request.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
       accessToken = body.accessToken;
       res.redirect('/')

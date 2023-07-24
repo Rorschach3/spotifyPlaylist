@@ -1,4 +1,10 @@
 import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { Link } from "react-router-dom";
+import Nav from './Nav';
+import WebPlayback from './WebPlayback';
+import SignUpForm from './SignUpForm';
+import Login from './Login';
 
 function Nav() {
 
@@ -10,13 +16,13 @@ function Nav() {
           <NavLink className="nav-link" to="/">Home</NavLink>
         </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/webPlayer">WebPlayer</NavLink>
+            <NavLink className="nav-link" to="/webplayback">WebPlayer</NavLink>
           </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/signUp">Sign-Up</NavLink>
+          <NavLink className="nav-link" to="/signup">SignUp</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/signIn">Sign-In</NavLink>
+          <NavLink className="nav-link" to="/login">SignIn</NavLink>
         </li>
         </ul>
       </div>
