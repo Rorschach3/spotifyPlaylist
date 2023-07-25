@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Mainpage from './Mainpage.js'
-import Login from './components/LoginForm/LoginForm'
+import Nav from './Nav';
 import './Main.css';
 
 function Main() {
