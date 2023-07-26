@@ -1,29 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Mainpage from './Mainpage.js'
+import SignUpForm from './components/SignUpForm/SignUpForm.js';
+import Login from './components/LoginForm/Login.js';
+import WebPlayback from './pages/WebApp/WebPlayback.js';
 import Nav from './Nav';
 import './Main.css';
 
 function Main() {
 
-  const [token, setToken] = useState('');
-
-  useEffect(() => {
-
-    async function getToken() {
-      const response = await fetch('/auth/token');
-      const json = await response.json();
-      setToken(json.accessToken);
-    }
-
-    getToken();
-
-  }, []);
-
   return (
-    <>
-        { (token === '') ? <Nav /> : <Mainpage /> }
-    </>
-  );
+  <>
+    <Nav />
+    <Mainpage />
+    <WebPlayback />
+    <Login />
+    <SignUpForm /> 
+  </>
+    );
 }
 
 export default Main;

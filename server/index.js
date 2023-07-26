@@ -1,6 +1,10 @@
 import express from 'express';
 import { post } from 'request';
 import { config } from 'dotenv';
+import cors from 'cors'; // Add this line
+
+// ... rest of your code ...
+
 
 const port = 5000
 
@@ -9,9 +13,8 @@ var accessToken = ''
 config()
 
   // Credentials 
-var client_id = process.env.SPOTIFY_CLIENT_ID
-var client_secret = process.env.SPOTIFY_CLIENT_SECRET
-
+var client_id = '684f2f7c27fc4e6eac20d56f7b4da9fe'
+var client_secret = '256582d4f9d04a7f82631a7ec7cf5945';
 var spotify_redirect_uri = 'http://localhost:3000/auth/callback'
 
 var generateRandomString = function (length) {
@@ -25,6 +28,7 @@ var generateRandomString = function (length) {
 };
 
 var app = express();
+app.use(cors()); // Add this line as middleware
 
 app.get('/auth/login', (req, res) => {
 

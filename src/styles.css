@@ -2,6 +2,7 @@ html {
   background-image: url("../public/spotify-bg.jpg");
   background-size: cover;
   background-repeat: repeat;
+  width: 100%;
   
 }
 

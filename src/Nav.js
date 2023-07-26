@@ -7,7 +7,7 @@ function Nav() {
       <div className="container-nav">
         <ul className="navbar-nav mr-auto mt-2 mt-lg-1">
         <li className="nav-item">
-          <Link className="nav-link" exact to="/">Home</Link>
+          <Link className="nav-link" to="/">Home</Link>
         </li>
         <li className="nav-item">
           <Link className="navbar-link" to="/WebPlayback">Spotify Webplayback</Link>

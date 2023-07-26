@@ -26,8 +26,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 100vh;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 h1.Header {
@@ -386,10 +386,11 @@ div.card:hover {
   padding-bottom:7px;
   margin-bottom:-27px;
   margin-left:-50px;
-  width:2247px;
+  width: 100vh;
   color:rgba(255, 255, 255, 1);
   background-color: rgba(0,0,0,.2);
   box-shadow: rgba(0,0,0,.5);
+  text-decoration: none;
   flex-direction:row;
   justify-content:space-between;
   flex-wrap:nowrap;
@@ -419,5 +420,77 @@ div.card:hover {
 
 li.nav-item a.nav-link {
   color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  position: sticky;
+  top: 0px;
  }
 
+/* List */
+.navbar ul{
+  width:1200px;
+  margin-right:450px;
+  transform: translatex(97px) translatey(-34px);
+  padding-top:30px;
+  margin-bottom:0px;
+  text-decoration: none;
+ }
+ 
+
+
+
+#root.nav {
+  background-color: rgba(0, 0, 0, 0.148);
+  color: rgb(246, 246, 246);
+  height: 1rem;
+}
+
+/* List */
+.navbar ul {
+  position: relative;
+  left: 40%;
+  transform: translateX(-50%);
+  top: 0;
+  margin-right: auto;
+  margin-left: 5rem;
+  max-height: 2rem;
+  padding-right: 63px;
+  padding-top:10px;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+/* Link */
+.navbar-nav .nav-item a {
+  font-size: 0.8em;
+}
+
+@media (min-width: 1000px) {
+  /* List */
+  .navbar ul {
+    margin-top: -75px !important;
+  }
+}
+
+navbar-nav.mr-auto.mt-2.mt-lg-1 {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  
+}
+
+
+/* List */
+.navbar ul {
+  width: 180vh;
+}
+
+#root .input-group-lg {
+  padding: 50px 20vw;
+  margin: auto 10px;
+}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SpotifyGetPlaylists from "./components/SpotifyGetPlaylists/SpotifyGetPlaylists";
 import "./WebPlayback.css";
 
-const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe';
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
 const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/callback/";
 const SPACE_DELIMITER = "%20";
