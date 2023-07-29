@@ -1,5 +1,5 @@
 {
-  "name": "spotify-web-player",
+  "name": "spotify-playlist",
   "version": "0.1.0",
   "description": "spotify playlist app",
   "keywords": [
@@ -36,6 +36,7 @@
     "row": "^0.0.1",
     "stream": "^0.0.2",
     "stream-browserify": "^3.0.0",
+    "switch": "^0.0.0",
     "util": "^0.12.5",
     "webpack": "^5.88.2"
   },

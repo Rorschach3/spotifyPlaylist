@@ -1,11 +1,7 @@
-
-
 :root {
   font-family: MICR, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 300;
-
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,37 +11,40 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: #ffffff;
+  text-decoration: none;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 100%;
-  min-height: 100%;
+  margin: 10 10;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("/public/spotify-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-weight: 400;
+  height: 100%;
 }
 
 h1.Header {
   font-size: 2.5rem;
-  color: rgb(30, 46, 31);
+  color: rgb(255, 255, 255);
   display: flex;
   place-items: center;
   flex-direction: column;
-  margin-bottom: 1em;
-  margin-top: 20%;
-  position: center;
+  margin-top: 10%;
   text-align: center;
   font-weight: 600;
   font-family: MICR, OCR-B, monospace;
-
-
 }
-
 
 button {
   border-radius: 8px;
@@ -54,135 +53,71 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #eadede57;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: #06fa27;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-html, body {
-  background-image: url("/public/spotify-bg.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  font-weight: 400;
-  height: 100%;
-  padding: 3vh 20vh 40vh 28vh;
-}
-
-
-h2, h1, ul {
-  color: rgba(191, 240, 31, 0.5);
-}
-
-h2 {
-  padding: 2% 0;
-  text-align: center;
-  font-size: 4rem;
-  margin: 4% auto;
-}
-
-ul {
-  display: flex;
+/* Navigation */
+#root nav {
+  display:flex;
   flex-direction: column;
-  align-items: center;
-  font-size: 1.1rem;
-  font-weight: 500;
-  list-style: none;
-  box-shadow: rgba(0, 0, 0, 0.54) 1px 1px 10px;
-  width: 50em;
-  padding: 5%;
-  margin: 0 auto;
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
+  margin: 10, 10;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.0);
+  color: rgb(255, 255, 255);
+  position: sticky;
+  top: 0px;
 }
 
-#container {
-  display: flex;
-  justify-content: center;
-  margin: 5% auto;
+/* List */
+.navbar ul {
+  padding-right: 1rem;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.118);
+  border-radius: 8px;
+  box-shadow: rgba(240, 239, 239, 1);
+  text-decoration: none;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  padding: 10 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-div.App {
-  margin: 5%;
-  padding-left: 0;
+/* Link */
+.navbar-nav .nav-item a {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 1);
 }
 
-div.card {
-  display: grid;
-  place-items: center;
-  color: rgba(255,255,255, 1);
-  background-color: rgba(2, 61, 24, 0.248);
-  box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 4px;
-}
-
-div#root {
-  height: 100vh;
-}
-/* ************************************************************************ */
 
 /* Container */
 #root .App .container {
-  width: 100%;
+  width: 829px !important;
   margin: 0 auto;
-  padding: 50px;
-}
-
-/* Button */
-#root .App .container .input-group-lg .btn-primary {
-  background-color: #04810e !important;
-  color: rgba(250, 250, 3, 0) !important;
-}
-
-#root .App .container .input-group-lg .btn-primary:focus {
-  background-color: #07be16 !important;
-  box-shadow: 0px 0px 10px 0px #e8eee9 !important;
-  border-radius: 5px !important;
-  transition: all 0.2s ease-in-out !important;
-  scale: 0.78 !important;
+  padding-left: 10px;
+  padding-right: 100px;
 }
 
 /* Heading */
 #profile h2 {
   font-weight: 500;
-  padding-top: 5%;
-  margin-bottom: 30px;
-  margin-top: 40px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -190,307 +125,59 @@ div#root {
   display: flex;
   align-items: center;
   transform: translateY(25px);
-  margin-top: 15%;
+  margin-top: 5%;
   overflow: visible;
 }
 
 input.form-control {
-  background-color: rgba(0, 0, 0, 0.198);
+  background-color: rgba(0, 0, 0, 0.524);
   border: 1.3px solid rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   border-radius: 5px;
   padding: 2px;
 }
 
-/* Container */
-#root .App .container {
+/* Additional styles can be added below as needed */
+.nav-item {
+  margin: 8px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 600px !important;
-  margin: 0 auto;
-  padding: 50px;
-}
-
-div.mb-3.input-group.input-group-lg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-img.card-img {
-  display: block;
-  max-width: 100vh;
-  height: auto;
-}
-
-/* Inline #0 | http://localhost:3000/ */
-
-#root .App .container {
-  width: 829px !important;
-  margin: 0 auto;
-  padding-left: 144px;
-  padding-right: 161px;
-}
-
-/* Element | http://localhost:3000/ */
-
-#profile > ul:nth-child(3) {
-  padding: 10px 16px;
-  border: 1px solid;
-  border-color: rgba(0, 0, 0, 0.727);
-}
-
-.mb-3.input-group.input-group-lg:focus {
-  background-color: rgba(214, 246, 7, 0.917);
-}
-.App-playlist {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-@media only screen and (max-width: 1020px) {
-  .App-playlist {
-    align-items: center;
-    flex-direction: column;
-  }
-}
-
-
-:root {
-  font-family: MICR, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 300;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: url("/public/spotify-bg.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  font-weight: 400;
-  height: 100%;
-  padding: 3vh 20vh 40vh 28vh;
-}
-
-h1.Header {
-  font-size: 2.5rem;
-  color: rgb(255, 255, 255);
-  display: flex;
-  place-items: center;
-  flex-direction: column;
-  margin-bottom: 1em;
-  margin-top: 20%;
-  text-align: center;
-  font-weight: 600;
-  font-family: MICR, OCR-B, monospace;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a57;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-/* Add the light color scheme styles here (if needed) */
-
-
-div.card:hover {
-  color: rgba(255,255,255,1);
-  background-color: rgba(255,255,255,0.3);
-  transition: all 0.4s ease-in-out !important;
-  scale: 1.03 !important;
-}
-
-/*  ************************************************************************************** */
-
-
- /* Navigation */
- #root nav{
-  top: 0px;
-  margin-top:2em;
-  width:100%;
-  height:150px;
-  background-color:rgba(0, 0, 0, 0.0);
-  color: rgb(246, 246, 246);
-  position: sticky;
-  top: 0px;
-
- }
-/* List */
-#navbarToggler ul{
-  margin-right:0px;
-  margin-left:0px;
-  overflow:hidden;
-  width:1250px;
-  transform: translatex(-256px) translatey(-135px);
- }
- 
-  
-#root.nav {
-  background-color: rgba(0, 0, 0, 0.0);
-  color: rgba(246, 246, 246, 0);
-  width: 200vh;
-  height: 1rem;
-}
-
-
-
-/* List */
-.navbar ul{
-  position:relative;
-  left:-354px;
-  top:-21px;
-  margin-right:325px;
-  min-height:70px;
-  padding-right:63px;
-  padding-top:10px;
-  padding-bottom:7px;
-  margin-bottom:-27px;
-  margin-left:-50px;
-  width: 100vh;
-  color:rgba(255, 255, 255, 1);
-  background-color: rgba(0,0,0,.2);
-  box-shadow: rgba(0,0,0,.5);
-  text-decoration: none;
-  flex-direction:row;
-  justify-content:space-between;
-  flex-wrap:nowrap;
-  align-items:stretch;
-  transform: translatey(-27px);
- }
- 
- /* Link */
- .navbar-nav .nav-item a{
-  font-size:0.8em;
- }
- 
- @media (min-width:992px){
- 
-  /* List */
-  .navbar ul{
-   margin-top:-25px !important;
-  }
-  
- }
-
- navbar-nav.mr-auto.mt-2.mt-lg-1 {
-  background-color: rgba(0,0,0,0.2);
-  color: rgba(255,255,255,1);
- }
-
-
-li.nav-item a.nav-link {
-  color: rgba(255, 255, 255, 1);
-  text-decoration: none;
-  position: sticky;
-  top: 0px;
- }
-
-/* List */
-.navbar ul{
-  width:1200px;
-  margin-right:450px;
-  transform: translatex(97px) translatey(-34px);
-  padding-top:30px;
-  margin-bottom:0px;
-  text-decoration: none;
- }
- 
-
-
-
-#root.nav {
-  background-color: rgba(0, 0, 0, 0.148);
-  color: rgb(246, 246, 246);
-  height: 1rem;
-}
-
-/* List */
-.navbar ul {
-  position: relative;
-  left: 40%;
-  transform: translateX(-50%);
-  top: 0;
-  margin-right: auto;
-  margin-left: 5rem;
-  max-height: 2rem;
-  padding-right: 63px;
-  padding-top:10px;
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(0, 0, 0, 0.2);
-  box-shadow: rgba(0, 0, 0, 0.5);
-  text-decoration: none;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: stretch;
+  font-size: .9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,1);
 }
 
-/* Link */
-.navbar-nav .nav-item a {
-  font-size: 0.8em;
+a.nav-link {
+  font-size: .8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,1);
 }
 
-@media (min-width: 1000px) {
-  /* List */
-  .navbar ul {
-    margin-top: -75px !important;
-  }
+a.nav-link:hover {
+  color: rgba(203, 245, 169, 0.8);
+  font-size: 1rem;
+  font-weight: 600; 
+  text-shadow:1px 1px 1px rgba(238, 244, 197, 0.943);
 }
 
-navbar-nav.mr-auto.mt-2.mt-lg-1 {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: rgba(255, 255, 255, 1);
-  text-decoration: none;
-  
-}
-
-
-/* List */
 .navbar ul {
-  width: 180vh;
+  display:flex;
+  flex-direction: row;
+  position:fixed;
+  top: -10px;
+  width: 100%;
+  right: 0px;
 }
 
-#root .input-group-lg {
-  padding: 50px 20vw;
-  margin: auto 10px;
+#root h1 {
+  font-size: 3.4rem;
+  display: inline-block;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 2px 2px 4px rgba(73, 241, 146, 1);
+  position: relative;
+  top: -3em;
+  
 }
