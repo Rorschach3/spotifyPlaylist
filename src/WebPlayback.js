@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SpotifyGetPlaylists from "./components/SpotifyGetPlaylists/SpotifyGetPlaylists";
-import "./WebPlayback.css";
+import SpotifyGetPlaylist from "./SpotifyGetPlaylist.js";
 
-const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe';
-const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
-const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/callback/";
+const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe'
+const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize/";
+const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/auth/callback/";
 const SPACE_DELIMITER = "%20";
 const SCOPES = ["user-read-currently-playing", "user-read-playback-state", "playlist-read-private"];
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
@@ -37,14 +36,15 @@ const WebPlayback = () => {
     });
 
     const handleLogin = () => {
-        window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
+        window.location = SPOTIFY_AUTHORIZE_ENDPOINT + '?client_id=' + CLIENT_ID + '&redirect_uri=' + REDIRECT_URL_AFTER_LOGIN + '&scope=' + SCOPES_URL_PARAM + '&response_type=token&show_dialog=true';
       };
+                  //accounts.spotify.com/authorize?client_id=684f2f7c27fc4e6eac20d56f7b4da9fe&redirect_uri=http://localhost:3000/auth/callback/&scope=user-read-currently-playing%20user-read-playback-state%20playlist-read-private&response_type=token&show_dialog=true
 
     return (
         <div className="container">
-        <h1>hi</h1>
-        <button onClick={handleLogin}>login to spotify</button>
-        <SpotifyGetPlaylists />
+        <h1>Login to your Spotify Account</h1>
+        <button onClick={handleLogin}>Spotify Login</button>
+        <SpotifyGetPlaylist />
         </div>
     );
 

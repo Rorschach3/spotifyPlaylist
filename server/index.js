@@ -1,13 +1,14 @@
-import express from 'express';
-import { post } from 'request';
-import { config } from 'dotenv';
-import cors from 'cors'; // Add this line
+const express = require('express');
+const cors = require('cors');
+const { post } = require('request');
+
+const { config } = require('dotenv');
+
 
 // ... rest of your code ...
 
 
 const port = 5000
-
 var accessToken = ''
 
 config()
@@ -15,7 +16,7 @@ config()
   // Credentials 
 var client_id = '684f2f7c27fc4e6eac20d56f7b4da9fe'
 var client_secret = '256582d4f9d04a7f82631a7ec7cf5945';
-var spotify_redirect_uri = 'http://localhost:3000/auth/callback'
+
 
 var generateRandomString = function (length) {
   var text = '';
@@ -32,15 +33,13 @@ app.use(cors()); // Add this line as middleware
 
 app.get('/auth/login', (req, res) => {
 
-  var scope = "streaming user-read-email user-read-private"
-  var state = generateRandomString(16);
+  var scope = ["user-read-currently-playing", "user-read-playback-state", "playlist-read-private"];
 
   var auth_query_parameters = new URLSearchParams({
     response_type: "code",
     client_id: client_id,
     scope: scope,
-    redirect_uri: spotify_redirect_uri,
-    state: state
+    redirect_uri: "http://localhost:3000/auth/callback",
   })
             // authorization Base64 encoded key for access token
   res.redirect('https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString());
@@ -54,7 +53,7 @@ app.get('/auth/callback', (req, res) => {
     url: 'https://accounts.spotify.com/api/token',
     form: {
       code: code,
-      redirect_uri: spotify_redirect_uri,
+      redirect_uri: "http://localhost:3000/auth/callback",
       grant_type: 'authorization_code'
     },
     headers: {
