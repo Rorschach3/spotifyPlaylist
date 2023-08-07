@@ -1,8 +1,7 @@
+// import serviceWorker from "./serviceWorker";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-// import serviceWorker from "./serviceWorker.js";
-
-import App from "./App.js";
+import App from "./App";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);

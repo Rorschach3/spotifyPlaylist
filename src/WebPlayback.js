@@ -5,7 +5,7 @@ const CLIENT_ID = '684f2f7c27fc4e6eac20d56f7b4da9fe'
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize/";
 const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/auth/callback/";
 const SPACE_DELIMITER = "%20";
-const SCOPES = ["user-read-currently-playing", "user-read-playback-state", "playlist-read-private"];
+const SCOPES = ["streaming user-read-email", "user-read-private", "playlist-read-private"];
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
 const getReturnedParamsFromSpotifyAuth = (hash) => {
@@ -42,7 +42,7 @@ const WebPlayback = () => {
 
     return (
         <div className="container">
-        <h1>Login to your Spotify Account</h1>
+        <h1>Link your Spotify Account</h1>
         <button onClick={handleLogin}>Spotify Login</button>
         <SpotifyGetPlaylist />
         </div>

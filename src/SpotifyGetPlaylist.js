@@ -35,7 +35,7 @@ const SpotifyGetPlaylist = () => {
       {data?.items ? (
         data.items.map((item) => <p key={item.id}>{item.name}</p>)
       ) : (
-        <p>No playlists available.</p>
+        <p>No playlists available</p>
       )}
     </>
   );

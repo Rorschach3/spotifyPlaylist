@@ -156,15 +156,16 @@ h2, h1, li {
    /* Heading */
    #root h1{
     position:relative;
-    left:361px;
-    transform:translatex(0px) translatey(-175px);
+    left: 30vw;
+    transform:translatex(0px) translatey(-200px);
+    text-align: center;
    }
    
 
    p {
     position: relative;
     left: 25vw;
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: 600;
     color: rgb(0, 0, 0);
     margin: 2em;
