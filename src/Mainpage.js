@@ -74,8 +74,7 @@ function Mainpage() {
 
   return (
     <>
-      <Nav />
-      <h1 className="Header">Spotify API Artist Search</h1>
+    <h1 className="Header">Spotify API Artist Search</h1>
       <Container>
         <InputGroup className="mb-3" size="lg">
           <FormControl

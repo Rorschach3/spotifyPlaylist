@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Mainpage from './Mainpage.js'
-import Login from './components/LoginForm/LoginForm'
+import Mainpage from './Mainpage'
 import './Main.css';
+import Nav from './Nav'
 
 function Main() {
 

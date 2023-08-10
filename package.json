@@ -36,6 +36,7 @@
     "row": "^0.0.1",
     "stream": "^0.0.2",
     "stream-browserify": "^3.0.0",
+    "switch": "^0.0.0",
     "util": "^0.12.5",
     "webpack": "^5.88.2"
   },
@@ -54,8 +55,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node server",
-    "dev": "run-p server start",
-    "flow": "flow"
+    "dev": "run-p server start"
   },
   "eslintConfig": {
     "extends": [

@@ -1,18 +1,3 @@
-
-
-:root {
-  font-family: MICR, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 300;
-
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -26,7 +11,7 @@ body {
   box-sizing: border-box;
   place-items: center;
   min-width: 100%;
-  min-height: 100vh;
+  height: 100%;
 }
 
 h1.Header {
@@ -34,9 +19,9 @@ h1.Header {
   color: rgb(30, 46, 31);
   display: flex;
   place-items: center;
-  flex-direction: column;
+  flex-direction: row;
   margin-bottom: 1em;
-  margin-top: 20%;
+  margin-top: 10%;
   position: center;
   text-align: center;
   font-weight: 600;
@@ -67,7 +52,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #0a79da;
     background-color: #ffffff;
   }
   a:hover {
@@ -91,15 +76,10 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   font-weight: 400;
-  height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 html, body {
   background-image: url("/public/spotify-bg.png");
@@ -108,20 +88,18 @@ html, body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   font-weight: 400;
-  height: 100%;
   padding: 3vh 20vh 40vh 28vh;
 }
 
 
 h2, h1, ul {
-  color: rgba(191, 240, 31, 0.5);
+  color: rgba(118, 246, 86, 0.5);
 }
 
 h2 {
   padding: 2% 0;
   text-align: center;
   font-size: 4rem;
-  margin: 4% auto;
 }
 
 ul {
@@ -173,8 +151,8 @@ div#root {
 }
 
 #root .App .container .input-group-lg .btn-primary:focus {
-  background-color: #07be16 !important;
-  box-shadow: 0px 0px 10px 0px #e8eee9 !important;
+  background-color: #06d817 !important;
+  box-shadow: 0px 0px 10px 0px #e0f3e3 !important;
   border-radius: 5px !important;
   transition: all 0.2s ease-in-out !important;
   scale: 0.78 !important;
@@ -198,11 +176,12 @@ div#root {
 }
 
 input.form-control {
-  background-color: rgba(0, 0, 0, 0.198);
+  background-color: rgba(0, 0, 0, 0.518);
   border: 1.3px solid rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   border-radius: 5px;
   padding: 5px;
+  width: 5em;
 }
 
 /* Container */
@@ -217,6 +196,7 @@ input.form-control {
 
 div.mb-3.input-group.input-group-lg {
   display: flex;
+  width: 20em;
   justify-content: center;
   align-items: center;
 }
@@ -245,7 +225,7 @@ img.card-img {
 }
 
 .mb-3.input-group.input-group-lg:focus {
-  background-color: rgba(214, 246, 7, 0.917);
+  background-color: rgba(239, 244, 203, 0.917);
 }
 .App-playlist {
   display: flex;
@@ -288,7 +268,7 @@ h1.Header {
   color: rgb(255, 255, 255);
   display: flex;
   place-items: center;
-  flex-direction: column;
+  flex-direction: row;
   margin-bottom: 1em;
   margin-top: 20%;
   text-align: center;
@@ -303,7 +283,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a57;
+  background-color: #1a1a1a28;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -322,7 +302,7 @@ button:focus-visible {
 
 div.card:hover {
   color: rgba(255,255,255,1);
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255, 255, 255, 0.338);
   transition: all 0.4s ease-in-out !important;
   scale: 1.03 !important;
 }
@@ -455,30 +435,5 @@ ul.navbar-nav li a:hover {
   top: 0px;
  }
  
- /* List */
- #root .navbar .container ul{
-  width:1353px !important;
- }
- 
- @media (min-width:992px){
- 
-  /* List */
-  .navbar ul{
-   margin-top:10px !important;
-  }
-  
- }
 
- /* Input group */
-#root .input-group-lg{
-  left:-3px;
-  top:1px;
-  transform: translatex(358px) translatey(25px);
- }
- 
- /* Input group */
- #root .container .input-group-lg{
-  width:36% !important;
- }
- 
  
