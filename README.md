@@ -7,8 +7,10 @@
 ##### Installation
 
 1. Make sure you have node.js, use the command
-   ```sudo apt update
-   sudo apt install nodejs npm```
+   ```
+   sudo apt update
+   sudo apt install nodejs npm
+   ```
   
 2. Fork the repository from Github and clone it using the following command:
 
