@@ -1,0 +1,15 @@
+html {
+  background-image: url("../public/spotify-bg.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  width: 100%;
+  
+}
+
+body {
+  background-image: url("../public/spotify-bg.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-color: rgba(0,0,0,0.00);
+  
+}

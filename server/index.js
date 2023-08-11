@@ -1,6 +1,8 @@
 const express = require('express')
 const request = require('request');
 const dotenv = require('dotenv');
+const cors = require('cors');
+
 
 const port = 5000
 
@@ -25,6 +27,7 @@ var generateRandomString = function (length) {
 };
 
 var app = express();
+app.use(cors()); // Add this line as middleware
 
 app.get('/auth/login', (req, res) => {
 
