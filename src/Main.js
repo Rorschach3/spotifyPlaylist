@@ -9,9 +9,6 @@ function Main() {
   <>
     <Nav />
     <Mainpage />
-    <WebPlayback />
-    <Login />
-    <SignUpForm /> 
   </>
     );
 }

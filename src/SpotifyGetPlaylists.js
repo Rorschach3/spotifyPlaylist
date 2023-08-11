@@ -24,15 +24,23 @@ const SpotifyGetPlaylists = () => {
         setData(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log("Error fetching playlists:", error);
       });
   };
 
   return (
-    <>
+    <div>
       <button onClick={handleGetPlaylists}>Get Playlists</button>
-      {data?.items ? data.items.map((item) => <p>{item.name}</p>) : null}
-    </>
+      {data?.items ? (
+        <ul>
+          {data.items.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>No playlists available.</p>
+      )}
+    </div>
   );
 };
 

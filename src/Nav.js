@@ -17,6 +17,11 @@ function Nav() {
 								TestPage1
 							</Link>
 						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/WebPlayer">
+								WebPlayer
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</nav>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SpotifyGetPlaylists from "./components/SpotifyGetPlaylists/SpotifyGetPlaylists";
-import "./WebPlayback.css";
+import SpotifyGetPlaylists from "./SpotifyGetPlaylists";
 
 const CLIENT_ID = "684f2f7c27fc4e6eac20d56f7b4da9fe";
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
@@ -23,7 +22,7 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
     return paramsSplitUp;
   };
 
-  const WebPlayback = () => {
+  const WebPlayer = () => {
     const [isPaused, setPaused] = useState(false);
     const [isActive, setActive] = useState(false);
     const [player, setPlayer] = useState(undefined);
@@ -100,4 +99,4 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
     }
   };
   
-export default WebPlayback;
+export default WebPlayer;
