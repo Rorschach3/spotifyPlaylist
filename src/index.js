@@ -8,9 +8,9 @@ import App from "./App";
 =======
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-// import serviceWorker from "./serviceWorker";
+// import serviceWorker from "./serviceWorker.js";
 
-import App from "./App";
+import App from "./App.js";
 
 >>>>>>> 38222b1 (Navbar works)
 const rootElement = document.getElementById("root");
