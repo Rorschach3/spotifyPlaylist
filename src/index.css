@@ -20,13 +20,11 @@ body {
 
 h1.Header {
   font-size: 2.5rem;
-  color: rgb(30, 46, 31);
+  color: rgb(255, 255, 255);
   display: flex;
   place-items: center;
   flex-direction: column;
-  margin-bottom: 1em;
-  margin-top: 20%;
-  position: center;
+  margin-top: 10%;
   text-align: center;
   font-weight: 600;
   font-family: MICR, OCR-B, monospace;
@@ -39,13 +37,15 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #eadede57;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: #06fa27;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -119,15 +119,28 @@ ul {
   border-radius: 10px;
 }
 
-#container {
-  display: flex;
-  justify-content: center;
-  margin: 5% auto;
+/* List */
+.navbar ul {
+  padding-right: 1rem;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.118);
+  border-radius: 8px;
+  box-shadow: rgba(240, 239, 239, 1);
+  text-decoration: none;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  padding: 10 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-div.App {
-  margin: 5%;
-  padding-left: 0;
+/* Link */
+.navbar-nav .nav-item a {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 1);
 }
 
 div.card {
@@ -147,29 +160,15 @@ div#root {
 #root .App .container {
   width: 80%;
   margin: 0 auto;
-  padding: 50px;
-}
-
-/* Button */
-#root .App .container .input-group-lg .btn-primary {
-  background-color: #04810e !important;
-  color: rgba(250, 250, 3, 0) !important;
-}
-
-#root .App .container .input-group-lg .btn-primary:focus {
-  background-color: #07be16 !important;
-  box-shadow: 0px 0px 10px 0px #e8eee9 !important;
-  border-radius: 5px !important;
-  transition: all 0.2s ease-in-out !important;
-  scale: 0.78 !important;
+  padding-left: 10px;
+  padding-right: 100px;
 }
 
 /* Heading */
 #profile h2 {
   font-weight: 500;
-  padding-top: 5%;
-  margin-bottom: 30px;
-  margin-top: 40px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -177,20 +176,21 @@ div#root {
   display: flex;
   align-items: center;
   transform: translateY(25px);
-  margin-top: 15%;
+  margin-top: 5%;
   overflow: visible;
 }
 
 input.form-control {
-  background-color: rgba(0, 0, 0, 0.198);
+  background-color: rgba(0, 0, 0, 0.524);
   border: 1.3px solid rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   border-radius: 5px;
   padding: 5px;
 }
 
-/* Container */
-#root .App .container {
+/* Additional styles can be added below as needed */
+.nav-item {
+  margin: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
