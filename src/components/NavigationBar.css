@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:src/components/NavigationBar/NavigationBar.css
 .NavigationBar {
     width: 100%;
     background: black;
     opacity: 0.75;
+=======
+.NavigationBar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+>>>>>>> 38222b1 (Navbar works)
     color: white;
     /* fix the navbar to the top */
     position: fixed;
@@ -12,6 +18,7 @@
   a {
     color: white;
   }
+<<<<<<< HEAD
   
 =======
 .NavigationBar {
@@ -38,3 +45,16 @@
     color: rgba(255,255,255,1);
    }
 >>>>>>> d3b99ea (still can't get navbar to work):src/components/NavigationBar.css
+=======
+  
+  .navbar ul {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgba(255,255,255, 1);
+  }
+
+
+  navbar-nav.mr-auto.mt-2.mt-lg-1 {
+    background-color: rgba(0,0,0,0.2);
+    color: rgba(255,255,255,1);
+   }
+>>>>>>> 38222b1 (Navbar works)

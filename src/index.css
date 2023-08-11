@@ -3,10 +3,6 @@
   line-height: 1.5;
   font-weight: 300;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 
@@ -123,7 +119,7 @@ ul {
 .navbar ul {
   padding-right: 1rem;
   color: rgba(255, 255, 255, 1);
-  background-color: rgba(0, 0, 0, 0.118);
+  background-color: rgba(0, 0, 0, 0.302);
   border-radius: 8px;
   box-shadow: rgba(240, 239, 239, 1);
   text-decoration: none;
@@ -362,6 +358,7 @@ div#root {
 }
 
 .navbar-nav {
+  font-size: 1.2rem;
 }
 
 a.nav-link {
