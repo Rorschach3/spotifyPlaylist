@@ -3,7 +3,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Mainpage from "./Mainpage";
 import TestPage1 from "./TestPage1";
-import WebPlayer from "./webPlayer";
+import WebPlayer from "./WebPlayer";
 import Nav from "./Nav";
 // import Example from './example';
 // import { AuthProvider } from './context/AuthContext';

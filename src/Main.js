@@ -4,19 +4,26 @@ import Nav from './Nav.js'
 import './Main.css';
 
 function Main() {
-  const [token, setToken] = useState("");
+
+  const [token, setToken] = useState('');
 
   useEffect(() => {
+
     async function getToken() {
-      const response = await fetch("/auth/token");
+      const response = await fetch('/auth/token');
       const json = await response.json();
       setToken(json.accessToken);
     }
 
     getToken();
+
   }, []);
 
-  return <>{token === "" ? <TestPage1 /> : <Mainpage />}</>;
+  return (
+    <>
+        { (token === '') ? <Nav /> : <Mainpage /> }
+    </>
+  );
 }
 
 export default Main;

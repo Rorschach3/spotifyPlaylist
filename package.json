@@ -1,12 +1,15 @@
 {
-  "name": "react-navigation-router",
-  "version": "1.0.0",
-  "description": "",
+  "name": "spotify-playlist",
+  "version": "0.1.0",
+  "description": "spotify playlist app",
+  "private": true,
+  "proxy": "http://localhost:5000",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "bootstrap": "^5.3.1",
     "browser-router": "^0.2.0",
+    "chokidar": "^3.5.3",
     "cors": "2.8.5",
     "loader-utils": "3.2.1",
     "next": "13.2.4",
