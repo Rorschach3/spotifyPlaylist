@@ -11,11 +11,11 @@ const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 const getReturnedParamsFromSpotifyAuth = (hash) => {
   const stringAfterHashtag = hash.substring(1);
   const paramsInUrl = stringAfterHashtag.split("&");
-  const paramsSplitUp = paramsInUrl.reduce((accumulater, currentValue) => {
+  const paramsSplitUp = paramsInUrl.reduce((accumulator, currentValue) => {
     console.log(currentValue);
     const [key, value] = currentValue.split("=");
-    accumulater[key] = value;
-    return accumulater;
+    accumulator[key] = value;
+    return accumulator;
   }, {});
 
   return paramsSplitUp;
@@ -92,9 +92,34 @@ const WebPlayer = () => {
   };
 
   if (!isActive || !currentTrack) {
-    // ... (same as before)
+    return (
+      <div className="container">
+        <h1>Login to your Spotify Account to sync your playlist</h1>
+        <button onClick={handleLogin}>Spotify Login</button>
+        <SpotifyGetPlaylists />
+      </div>
+    );
   } else {
-    // ... (same as before)
+    return (
+      <div className="container">
+        <div className="main-wrapper">
+          <img src={currentTrack.album.images[0].url} className="now-playing__cover" alt="" />
+          <div className="now-playing__side">
+            <div className="now-playing__name">{currentTrack.name}</div>
+            <div className="now-playing__artist">{currentTrack.artists[0].name}</div>
+            <button className="btn-spotify" onClick={() => player.previousTrack()}>
+              &lt;&lt;
+            </button>
+            <button className="btn-spotify" onClick={() => player.togglePlay()}>
+              {isPaused ? "PLAY" : "PAUSE"}
+            </button>
+            <button className="btn-spotify" onClick={() => player.nextTrack()}>
+              &gt;&gt;
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   }
 };
 
