@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SpotifyGetPlaylists from "./SpotifyGetPlaylists";
+import SpotifyGetPlaylists from "./SpotifyGetPlaylist";
 
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
 const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/callback/";

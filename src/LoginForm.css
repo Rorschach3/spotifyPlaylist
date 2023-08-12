@@ -23,7 +23,7 @@ input {
 input:hover,
 input:focus {
     color: black;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.559);
     margin: 10px 10px;
     text-align: center;
     display: flex;
@@ -41,7 +41,7 @@ button {
 h1 {
     text-align: center;
     display: flex;
-    top: 125px;
+    top: 150px;
     flex-direction: row;
-    text-shadow: 6, 6, 6, rgb(0, 50, 0);
+    text-shadow: 2, 6, 6, rgb(0, 100, 0);
   }

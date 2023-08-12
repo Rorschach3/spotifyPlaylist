@@ -14,7 +14,7 @@ dotenv.config()
 const client_id = '684f2f7c27fc4e6eac20d56f7b4da9fe'
 const client_secret = '256582d4f9d04a7f82631a7ec7cf5945';
 
-var spotify_redirect_uri = 'http://localhost:3000/auth/callback'
+var spotify_redirect_uri = 'http://localhost:3000/callback'
 
 var generateRandomString = function (length) {
   var text = '';
@@ -52,14 +52,14 @@ app.get('/auth/callback', (req, res) => {
   var code = req.query.code;
 
   var authOptions = {  // Post request to get access token from spotify
-    url: 'https://accounts.spotify.com/api/token',
+    url: 'https://accounts.spotify.com/api/token/',
     form: {
       code: code,
       redirect_uri: spotify_redirect_uri,
       grant_type: 'authorization_code'
     },
     headers: {
-      'Authorization': 'Basic ' + (Buffer.from(`${client_id}:${client_secret}`).toString('base64')),
+      'Authorization': 'Bearer ' + (Buffer.from(`${client_id}:${client_secret}`).toString('base64')),
       'Content-Type' : 'application/x-www-form-urlencoded'
     },
     json: true

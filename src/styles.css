@@ -59,6 +59,7 @@ h1 {
   font-weight: bold;
   text-decoration: none;
   width: 100%;
+  height: 1.2em;
 }
 
 .nav-link:hover {
@@ -71,11 +72,10 @@ h1 {
 /* Navbar */
 #root nav {
       border-radius: 15px;
-      height: 20px;
+      height: 50px;
       position: sticky;
       top: 10px;
       width: 100%;
-      bottom:auto;
       padding: 30px 20px;
       margin-bottom:15vh;
 }
@@ -114,5 +114,14 @@ nav.navbar {
   transform: translatex(33px);
  }
 
- 
- 
+ ul.navbar-nav {
+  position: sticky;
+  top: -20px;
+  height: 1.2em;
+  width: 10em;
+ }
+
+ a.nav-link {
+  height: 1.2em;
+  padding: 0px;
+ }
