@@ -26,7 +26,7 @@ function SearchBar() {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        setAccessToken(data.access_token);
+        setAccessToken(data.accessToken);
       } catch (error) {
         console.error('Error:', error.message);
       }
