@@ -6,23 +6,22 @@ import WebPlayer from './WebPlayer';
 import Nav from "./Nav";
 import Login from "./Login";
 import "./App.css";
-// import { AuthProvider } from './context/AuthContext';
-// import Dashboard from './components/Dashboard';
 
 function App() {
-
-const [token, setToken] = useState('');
+  const [accessToken, setAccessToken] = useState('');
 
   useEffect(() => {
-
     async function getToken() {
-      const response = await fetch('/auth/token');
-      const json = await response.json();
-      setToken(json.access_token);
+      try {
+        const response = await fetch('/auth/token');
+        const json = await response.json();
+        setAccessToken(json.access_token);
+      } catch (error) {
+        console.error('Error fetching token:', error);
+      }
     }
 
     getToken();
-
   }, []);
 
   return (
@@ -33,8 +32,11 @@ const [token, setToken] = useState('');
         </div>
         <Routes>
           <Route exact path="/" element={<Mainpage />} />
-          <Route path="/WebPlayer" element={ (token === '') ? <Login/> : <WebPlayer token={token} /> } />
           <Route path="/Playlist" element={<Playlist />} />
+          <Route
+            path="/WebPlayer"
+            element={accessToken === '' ? <Login /> : <WebPlayer accessToken={accessToken} />}
+          />
         </Routes>
       </Router>
     </div>

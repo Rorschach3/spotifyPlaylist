@@ -7,7 +7,7 @@ function Playlist() {
   const [isActive, setActive] = useState(false);
   const [player, setPlayer] = useState(undefined);
   const [currentTrack, setTrack] = useState(null); // Remove the 'track' from the useState declaration
-  let playlistId = '47SwmPz9xSwNNrIfHX0Ft6'
+  let playlistId = '1dfhhPqmkqMsmGTTsKwEDG'
   
   useEffect(() => {
     const script = document.createElement("script");
@@ -61,14 +61,14 @@ function Playlist() {
   if (!isActive || !currentTrack) { // Add a check for 'currentTrack'
     return (
       <>
-        <div>
+        <div className="iframe">
           {/* Your embedded Spotify playlist iframe */}
           <iframe
             title="Spotify Embed: Recommendation Playlist"
             src={`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`}
             width="100%"
             height="100%"
-            style={{ minHeight: '360px', backgroundColor: 'rgba(0,0,0,0.5)', position: 'static'}}
+            style={{ minHeight: '460px', backgroundColor: 'rgba(0,0,0,0.5)', position: 'inline-block'}}
             frameBorder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"

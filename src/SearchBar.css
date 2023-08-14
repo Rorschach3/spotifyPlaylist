@@ -157,7 +157,7 @@ h2, h1, li {
    #root h1{
     position:relative;
     left:361px;
-    transform:translatex(0px) translatey(-175px);
+    transform:translatex(0px) translatey(175px);
    }
    
 
@@ -168,4 +168,9 @@ h2, h1, li {
     font-weight: 600;
     color: rgb(0, 0, 0);
     margin: 2em;
+   }
+
+   h1.header {
+    position: inline-block;
+    top: 30em;
    }

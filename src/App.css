@@ -41,20 +41,15 @@
     top: 0;
     bottom: 0;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     /*filter: blur(8em) opacity(0.6);*/
     position: absolute;
   }
   
   .main-wrapper {
     padding-top: 45px;
-    align-items: center;
-    display: flex;
-    height: 100%;
-    margin: 0 auto;
-    justify-content: center;
     position: relative;
-    width: 80%;
+    width: 100%;
     z-index: 1;
   }
   
@@ -111,7 +106,14 @@
   }
   .btn-spotify:active {
     position:relative;
-    top:1px;
+    top:100px;
   }
-  
-  img { background: transparent; }
+
+  h1.Header {
+    position: inline-block;
+    top: 20em;
+   }
+
+   #root > div > h1 {
+    top: 20em;
+   }
