@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Mainpage from "./Mainpage";
-import TestPage1 from "./TestPage1";
+import Playlist from "./Playlist";
 import WebPlayer from './WebPlayer';
 import Nav from "./Nav";
 // import Example from './example';
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Mainpage />} />
           <Route path="/WebPlayer" element={<WebPlayer />} />
-          <Route path="/TestPage1" element={<TestPage1 />} />
+          <Route path="/Playlist" element={<Playlist />} />
         </Routes>
       </Router>
     </div>

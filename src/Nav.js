@@ -13,8 +13,8 @@ function Nav() {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/TestPage1">
-								TestPage1
+							<Link className="nav-link" to="/Playlist">
+								Playlist
 							</Link>
 						</li>
 						<li className="nav-item">

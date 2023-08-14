@@ -122,5 +122,48 @@ a.nav-link {
 }
 
 #buttonContainer {
-  background-color: rgb(0, 142, 0);
+  background-color: rgb(8, 212, 8);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+li.nav-item {
+  height: 1.2em;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+div.spotifyButton {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(3, 207, 71, 0.723);
+  border-radius: 15px;
+}
+
+
+iframe {
+  border-radius: 15px;
+  background-color: rgba(6, 194, 37, 0.498);
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.584);
+  position: relative;
+  left: 20em;
+  top: 40em;
+}
+
+navbar {
+  position: sticky;
+  top: 0;
+  width: 80%;
+  padding: 5px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.2em;
 }

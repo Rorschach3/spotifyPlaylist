@@ -375,3 +375,34 @@ a {
 a:hover {
   color: #0914e2;
 }
+
+
+div.spotifyButton {
+  display: block;
+  background-color: rgba(3, 68, 25, 0.564);
+  border-radius: 15px;
+}
+
+
+iframe {
+  border-radius: 15px;
+  background-color: rgba(6, 194, 37, 0.498);
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.584);
+  position: relative;
+  left: 20em;
+  top: 40em;
+}
+
+navbar {
+  position: sticky;
+  top: 0;
+  width: 80%;
+  padding: 5px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.2em;
+}
