@@ -121,7 +121,7 @@ a.nav-link {
   padding: 0px;
 }
 
-#buttonContainer {
+div.buttonContainer {
   background-color: rgb(8, 212, 8);
   border-radius: 15px;
   display: flex;

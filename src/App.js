@@ -1,21 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Mainpage from "./Mainpage";
 import Playlist from "./Playlist";
 import WebPlayer from './WebPlayer';
 import Nav from "./Nav";
-// import Example from './example';
+import Login from "./Login";
+import "./App.css";
 // import { AuthProvider } from './context/AuthContext';
 // import Dashboard from './components/Dashboard';
 
 function App() {
+
+const [token, setToken] = useState('');
+
+  useEffect(() => {
+
+    async function getToken() {
+      const response = await fetch('/auth/token');
+      const json = await response.json();
+      setToken(json.access_token);
+    }
+
+    getToken();
+
+  }, []);
+
   return (
     <div>
       <Router>
-        <Nav />
+        <div className="navbar">
+          <Nav />
+        </div>
         <Routes>
           <Route exact path="/" element={<Mainpage />} />
-          <Route path="/WebPlayer" element={<WebPlayer />} />
+          <Route path="/WebPlayer" element={ (token === '') ? <Login/> : <WebPlayer token={token} /> } />
           <Route path="/Playlist" element={<Playlist />} />
         </Routes>
       </Router>

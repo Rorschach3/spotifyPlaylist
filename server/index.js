@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const port = 5000
 
-var accessToken = ''
+global.accessToken = ''
 
 dotenv.config()
 
@@ -27,7 +27,7 @@ var generateRandomString = function (length) {
 };
 
 var app = express();
-app.use(cors()); // Add this line as middleware
+app.use(cors()); // middleware
 
 app.get('/auth/login', (req, res) => {
 
@@ -43,7 +43,6 @@ app.get('/auth/login', (req, res) => {
   })
             // authorization Base64 encoded key for access token
   res.redirect('https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString());
-  //https://accounts.spotify.com/authorize/?response_type=code&client_id=YOUR_SPOTIFY_CLIENT_ID&scope=streaming%20user-read-email%20user-read-private&redirect_uri=http://localhost:3000/auth/callback&state=YOUR_GENERATED_STATE
 
 })
 
@@ -59,7 +58,7 @@ app.get('/auth/callback', (req, res) => {
       grant_type: 'authorization_code'
     },
     headers: {
-      'Authorization': 'Bearer ' + (Buffer.from(`${client_id}:${client_secret}`).toString('base64')),
+      'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64')),
       'Content-Type' : 'application/x-www-form-urlencoded'
     },
     json: true
