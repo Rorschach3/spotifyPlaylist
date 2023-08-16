@@ -89,7 +89,7 @@ body {
 h2,
 h1,
 ul {
-  color: rgba(191, 240, 31, 0.5);
+  color: rgba(191, 240, 31, 0.923);
 }
 
 h2 {
@@ -146,10 +146,6 @@ div.card {
   background-color: rgba(2, 61, 24, 0.248);
   box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 4px;
 }
-
-div#root {
-  height: 100vh;
-}
 /* ************************************************************************ */
 
 /* Container */
@@ -186,13 +182,15 @@ input.form-control {
 
 /* Additional styles can be added below as needed */
 .nav-item {
-  margin: 8px;
+  margin: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 600px !important;
+  width: 200px !important;
   margin: 0 auto;
-  padding: 50px;
+  padding: 5px;
+  position: sticky;
+  top: 0;
 }
 
 div.mb-3.input-group.input-group-lg {
@@ -344,21 +342,10 @@ ul.navbar-nav {
   font-size: 1.2em;
   background-color: rgba(0, 0, 0, 0.338);
   position: sticky;
-  top: 0;
+  top: -10px;
   margin-top: 0px;
   margin-bottom: 50px;
   
-}
-
-div#root {
-  width: 30em;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.navbar-nav {
-  font-size: 1.2rem;
 }
 
 a.nav-link {

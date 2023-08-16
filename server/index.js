@@ -14,7 +14,10 @@ dotenv.config()
 const client_id = '684f2f7c27fc4e6eac20d56f7b4da9fe'
 const client_secret = '256582d4f9d04a7f82631a7ec7cf5945';
 
-var spotify_redirect_uri = 'http://localhost:3000/callback'
+var app = express();
+app.use(cors()); // middleware
+
+var spotify_redirect_uri = 'http://localhost:3000/auth/callback'
 
 var generateRandomString = function (length) {
   var text = '';
@@ -26,12 +29,9 @@ var generateRandomString = function (length) {
   return text;
 };
 
-var app = express();
-app.use(cors()); // middleware
-
 app.get('/auth/login', (req, res) => {
 
-  var scope = ["streaming", "user-read-email", "user-read-private"]
+  var scope = "streaming user-read-email user-read-private"
   var state = generateRandomString(16);
 
   var auth_query_parameters = new URLSearchParams({
@@ -65,12 +65,21 @@ app.get('/auth/callback', (req, res) => {
   };
   request.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
-      accessToken = body.accessToken;
-      res.redirect('/')
+      accessToken = body.access_token;
+      const scope = body.scope;
+    
+      if (scope.includes('streaming')) {
+        res.redirect('/');
+      } else {
+        res.send('Missing streaming scope');
+      }
+
+      } else {
+        res.send('invalid token');
     }
   });
 
-})
+});
 
 app.get('/auth/token', (req, res) => {
   res.json({ accessToken: accessToken})

@@ -8,14 +8,15 @@ import Login from "./Login";
 import "./App.css";
 
 function App() {
-  const [accessToken, setAccessToken] = useState('');
+  const [token, setToken] = useState('');
 
   useEffect(() => {
+
     async function getToken() {
       try {
         const response = await fetch('/auth/token');
         const json = await response.json();
-        setAccessToken(json.access_token);
+        setToken(json.access_token);
       } catch (error) {
         console.error('Error fetching token:', error);
       }
@@ -35,7 +36,7 @@ function App() {
           <Route path="/Playlist" element={<Playlist />} />
           <Route
             path="/WebPlayer"
-            element={accessToken === '' ? <Login /> : <WebPlayer accessToken={accessToken} />}
+            element={ (token === '') ? <Login /> : <WebPlayer token={token} />}
           />
         </Routes>
       </Router>

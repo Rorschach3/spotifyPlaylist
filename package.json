@@ -20,6 +20,7 @@
     "firebase": "^10.0.0",
     "firebase-admin": "^11.10.1",
     "flow-bin": "^0.212.0",
+    "heroku-cli": "^7.0.9",
     "loader-utils": "3.2.1",
     "nextjs-cors": "^2.1.2",
     "path": "^0.12.7",
@@ -31,8 +32,10 @@
     "react-scripts": "5.0.1",
     "response": "^0.18.0",
     "row": "^0.0.1",
+    "spotify-sdk": "^1.0.0-beta2",
     "stream": "^0.0.2",
     "switch": "^0.0.0",
+    "twilio": "^4.15.0",
     "util": "^0.12.5",
     "webpack": "^5.88.2"
   },

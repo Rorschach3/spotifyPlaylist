@@ -117,3 +117,16 @@
    #root > div > h1 {
     top: 20em;
    }
+
+   div.navbar {
+    position: fixed;
+    top: -10px;
+    height: 3em;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+   }
+
+   a.nav-link {
+    position: fixed;
+    top: -10px;
+   }

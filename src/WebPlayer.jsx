@@ -1,3 +1,4 @@
+import * as serviceWorker from './serviceWorker';
 import React, { useState, useEffect } from 'react';
 
 const track = {
@@ -63,18 +64,18 @@ function WebPlayer(props) {
             player.connect();
 
         };
-    }, []);
+    }, [props.token]); // Include props.token in the dependency array
 
-    if (!is_active) { 
-        return (
-            <>
-                <div className="container">
-                    <div className="main-wrapper">
-                        <b> Instance not active. Transfer your playback using your Spotify app </b>
-                    </div>
-                </div>
-            </>)
-    } else {
+    // if (!is_active) { 
+    //     return (
+    //         <>
+    //             <div className="container">
+    //                 <div className="main-wrapper">
+    //                     <b> Instance not active. Transfer your playback using your Spotify app </b>
+    //                 </div>
+    //             </div>
+    //         </>)
+    // } else {
         return (
             <>
                 <div className="container">
@@ -103,6 +104,6 @@ function WebPlayer(props) {
             </>
         );
     }
-}
 
-export default WebPlayer
+export default WebPlayer;
+serviceWorker.unregister();

@@ -130,3 +130,9 @@ div.navbar {
   align-items: center;
   height: 1.2em;
 }
+
+div.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
